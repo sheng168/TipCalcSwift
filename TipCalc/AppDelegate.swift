@@ -7,6 +7,9 @@
 //
 
 import UIKit
+//import Parse
+//import Firebase
+//import DateKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+//        let ref = Firebase(url: "https://yu.firebaseio.com/swift")
+//        ref.setValue("Hello")
+        
+//        Parse.enableLocalDatastore()
+//        Parse.setApplicationId("ss", clientKe: "ss")
+        
         return true
     }
 

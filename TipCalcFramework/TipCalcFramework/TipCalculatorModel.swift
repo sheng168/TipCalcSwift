@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TipCalculatorModel: NSObject {
+public class TipCalculatorModel: NSObject {
 //    func noop(sender sender: AnyObject) {
 //        
 //    }
@@ -60,9 +60,9 @@ class TipCalculatorModel: NSObject {
     }
     
     init(bill: Double, tipPct: Double) {
-//        super.init()
-//        self.bill = bill
-//        self.tipPct = tipPct
+        super.init()
+        self.bill = bill
+        self.tipPct = tipPct
         
         //        super.description
     }
@@ -80,7 +80,7 @@ class TipCalculatorModel: NSObject {
     //
     //    }
     
-    override var description: String {
+    override public var description: String {
         get {
             return "bill: \(bill) tipPct:\(tipPct) total:\(total)"
             //            return total * tipPct

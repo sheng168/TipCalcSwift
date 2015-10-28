@@ -1,21 +1,104 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6724" systemVersion="14A389" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3735"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9019"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--TipCalc-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller title="TipCalc" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="TipCalc_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label alignment="left" text="$10+15%=$11.50" id="YML-cF-rO9"/>
+                        <group width="1" height="50" alignment="left" id="yWC-Rq-b4k">
+                            <items>
+                                <label alignment="left" verticalAlignment="center" text="$" id="jQo-LA-OvX"/>
+                                <picker width="50" height="50" alignment="left" focusStyle="stack" indicatorMode="shownWhileFocused" id="MPU-aR-KMU">
+                                    <connections>
+                                        <action selector="pickerChanged:" destination="AgC-eL-Hgc" id="UNh-kk-8Wl"/>
+                                    </connections>
+                                </picker>
+                                <label alignment="left" verticalAlignment="center" text="." id="Pdy-Eh-lBV"/>
+                                <picker width="50" height="50" alignment="left" focusStyle="stack" indicatorMode="shownWhileFocused" id="fAV-47-gwd">
+                                    <connections>
+                                        <action selector="centPicker:" destination="AgC-eL-Hgc" id="sfj-0E-VFD"/>
+                                    </connections>
+                                </picker>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" layout="vertical" spacing="1" id="7ce-Gw-jeS">
+                            <items>
+                                <label width="1" alignment="left" text="Tip %" textAlignment="center" id="Aff-Xa-e8L"/>
+                                <slider width="1" alignment="left" continuous="YES" value="0.14999999999999999" maximum="0.29999999999999999" steps="30" id="PAm-AZ-7nq">
+                                    <connections>
+                                        <action selector="tipChanged:" destination="AgC-eL-Hgc" id="ObY-K6-EdC"/>
+                                    </connections>
+                                </slider>
+                            </items>
+                        </group>
+                        <separator alignment="left" id="nhv-ct-AOv"/>
+                        <slider width="1" alignment="left" hidden="YES" continuous="YES" value="10" maximum="100" steps="100" id="yuj-t4-KRr">
+                            <connections>
+                                <action selector="billChanged:" destination="AgC-eL-Hgc" id="aQU-VQ-5UN"/>
+                            </connections>
+                        </slider>
+                        <slider width="1" alignment="left" hidden="YES" continuous="YES" maximum="0.98999999999999999" steps="99" id="AOJ-fK-ahy">
+                            <connections>
+                                <action selector="billCentsChanged:" destination="AgC-eL-Hgc" id="e7U-zT-M9V"/>
+                            </connections>
+                        </slider>
+                        <switch width="1" alignment="left" value="YES" title="Round Up" id="aJv-zb-ORq">
+                            <connections>
+                                <action selector="switch:" destination="AgC-eL-Hgc" id="HU9-Wc-snB"/>
+                            </connections>
+                        </switch>
+                        <button width="1" alignment="left" title="Save" id="vSX-tN-gVk">
+                            <connections>
+                                <segue destination="9QX-RV-pjK" kind="push" id="98N-Eb-Ljv"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="billSlider" destination="yuj-t4-KRr" id="pHN-V7-U3W"/>
+                        <outlet property="centPicker" destination="fAV-47-gwd" id="bn3-2n-tEw"/>
+                        <outlet property="dollarPicker" destination="MPU-aR-KMU" id="2Ee-aL-SHF"/>
+                        <outlet property="resultLabel" destination="YML-cF-rO9" id="diX-Fz-D4c"/>
+                        <outlet property="tipSlider" destination="PAm-AZ-7nq" id="YjH-yW-Ecl"/>
+                    </connections>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="235" y="347"/>
+            <point key="canvasLocation" x="235" y="331.5"/>
+        </scene>
+        <!--Detail-->
+        <scene sceneID="uMM-nE-Auo">
+            <objects>
+                <controller title="Detail" id="9QX-RV-pjK">
+                    <items>
+                        <label alignment="left" text="TODO:" id="LeE-hD-7F8"/>
+                        <dateLabel alignment="left" id="ZzQ-Jc-rNi">
+                            <dateFormatterStyle key="dateStyle" short="YES"/>
+                            <dateFormatterStyle key="timeStyle" short="YES"/>
+                        </dateLabel>
+                        <timer alignment="left" id="qnu-vC-ZOO"/>
+                        <imageView alignment="left" id="Nee-0N-BXj"/>
+                        <map height="100" alignment="left" id="YkS-7O-6qR"/>
+                        <movie width="1" height="100" alignment="left" id="PiX-Ta-4uZ"/>
+                    </items>
+                    <menu key="menu" id="jKk-hn-AuZ">
+                        <items>
+                            <menuItem title="Menu Item" id="Jf8-cg-rli"/>
+                            <menuItem title="Menu Item" id="dKj-CR-7Vf"/>
+                        </items>
+                    </menu>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="464" y="281"/>
         </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="BOz-TT-tkC">
             <objects>
-                <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController" customModuleProvider="target">
+                <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController" customModule="TipCalc_WatchKit_App" customModuleProvider="target">
                     <items>
                         <group alignment="left" id="t8f-Gd-c4y"/>
                         <group alignment="left" id="uCw-4Q-Ouw"/>
@@ -44,7 +127,7 @@
         <!--Notification Controller-->
         <scene sceneID="KIl-fV-djm">
             <objects>
-                <controller id="gdX-wl-uQE" customClass="NotificationController" customModuleProvider="target"/>
+                <controller id="gdX-wl-uQE" customClass="NotificationController" customModule="TipCalc_WatchKit_App" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="553" y="1001"/>
         </scene>
