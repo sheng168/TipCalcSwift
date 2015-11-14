@@ -1,3 +1,7 @@
+# run this to fix pod install error, don't know why
+# sudo gem install cocoapods-deintegrate
+# pod deintegrate
+
 use_frameworks!
 
 #pod 'AFNetworking'
