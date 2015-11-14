@@ -4,12 +4,22 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods.xcscheme</key>
+		<key>Pods-TipCalc WatchKit Extension-XCGLogger.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>XCGLogger.xcscheme</key>
+		<key>Pods-TipCalc WatchKit Extension.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-TipCalc-XCGLogger.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-TipCalc.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -17,12 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>7ADBFD334DD9E744544CF13175A595CA</key>
+		<key>09B38404C356B560DFCDFFEEAE6DF834</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E5ADC96556450146C4CE655EB3CFDF02</key>
+		<key>4D29FAE43A530A90F845880CA002CDB0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>97C2474533D271582A2951880424D21E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ED1D1DE37939D828083EE3A77304A070</key>
 		<dict>
 			<key>primary</key>
 			<true/>

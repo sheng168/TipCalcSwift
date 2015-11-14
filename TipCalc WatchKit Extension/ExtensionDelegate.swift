@@ -8,7 +8,8 @@
 
 import WatchKit
 import ClockKit
-//import XCGLogger
+
+import XCGLogger
 
 let log = XCGLogger.defaultInstance()
 

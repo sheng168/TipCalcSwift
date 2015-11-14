@@ -7,217 +7,351 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4B61A4CE21CDF73A34F055220E82C106 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		817400981D3D46A650C38F2D073B2045 /* Pods-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BCC458FDD5F692BBB2BFC64BB5701FC /* Pods-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AD25B7DA05BBEA6892C79AEA41B8B093 /* XCGLogger-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A24B888F57FCD4AF1049DECA04AC69B /* XCGLogger-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C6CA3EA649AABA2BDE276639BE4958A1 /* XCGLogger-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 68295F317CDB0CE9CAEB75558DF55F3B /* XCGLogger-dummy.m */; };
-		EE98FDD754EBF448A82845EC4C1F344A /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 894E5DA93A9F359521A89826BE6DA777 /* Pods-dummy.m */; };
-		F12F92B4C7B8929B14C9DABB4599B25A /* XCGLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2393F964B64C579AAED24A34D3108A /* XCGLogger.swift */; };
-		F20A1A9988512AB5BEAB046B5C3FDEBA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		12EFFD86566BE35B3A6836E38F974013 /* Pods-TipCalc-XCGLogger-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FEA333B921829880AF29B654BA8E8EC5 /* Pods-TipCalc-XCGLogger-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F6D440F11D367349D096E0E526BDF0A /* Pods-TipCalc-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A79F75189F6721A529F2503C6C427509 /* Pods-TipCalc-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F70F1B185C1584352ADD6BFF5724ACD /* XCGLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FE23AC3FE83FCA0A8F190FBD2DD97B /* XCGLogger.swift */; };
+		3E9243EF8E19EFC554BAA763F4FB87DC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C6B89BDF4940B4AF9D57D7449055DAA /* Foundation.framework */; };
+		4553EA7DA43157C45E39A2C79C5ABBDE /* Pods-TipCalc WatchKit Extension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F0907CF654CA458B516E18F962E92F2D /* Pods-TipCalc WatchKit Extension-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5478854F9CC4FFDFFA63EFE06D033D52 /* Pods-TipCalc WatchKit Extension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7ED5365763A6E295D62BD3FAEC3BA7 /* Pods-TipCalc WatchKit Extension-dummy.m */; };
+		7EDD405647DC9A9C718C91AF975B7857 /* XCGLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FE23AC3FE83FCA0A8F190FBD2DD97B /* XCGLogger.swift */; };
+		8804C6AE2689A5F8530FCD922C7D64A0 /* Pods-TipCalc-XCGLogger-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 591D30AB9560B5720520D85770E53AA7 /* Pods-TipCalc-XCGLogger-dummy.m */; };
+		8AA50AF1C22FAD12E3B9AE5EA923533A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C6B89BDF4940B4AF9D57D7449055DAA /* Foundation.framework */; };
+		B9785BD9357F741C6F913B3F89C6AEF4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D79CDBEF832FB5A2106CDDC44C55D38 /* Foundation.framework */; };
+		C76D3B74C50F98765A41D2B12FD0AD19 /* Pods-TipCalc WatchKit Extension-XCGLogger-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D3AC500311E18147E8F7867ED26D62D /* Pods-TipCalc WatchKit Extension-XCGLogger-dummy.m */; };
+		CC25EB68E0898C9E7529DF7F90BF2C5B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D79CDBEF832FB5A2106CDDC44C55D38 /* Foundation.framework */; };
+		E08BC3D80F15825A4E455F6B8A949B06 /* Pods-TipCalc-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0FD80D1BE4C395ABCC7F2DB8B928C7 /* Pods-TipCalc-dummy.m */; };
+		E39B8B428CB4BDABA5EFC7902914876B /* Pods-TipCalc WatchKit Extension-XCGLogger-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B0D647570070C8305A1F2E7AD4849CF3 /* Pods-TipCalc WatchKit Extension-XCGLogger-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		BD2F416266D88A09CD33195D31625833 /* PBXContainerItemProxy */ = {
+		3BFA41B7C806D78ABE42FB48216F959B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 7ADBFD334DD9E744544CF13175A595CA;
-			remoteInfo = XCGLogger;
+			remoteGlobalIDString = 4D29FAE43A530A90F845880CA002CDB0;
+			remoteInfo = "Pods-TipCalc-XCGLogger";
+		};
+		9471381A5E5229251EB2938691F7A401 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 97C2474533D271582A2951880424D21E;
+			remoteInfo = "Pods-TipCalc WatchKit Extension-XCGLogger";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2169620C40B617FB8CEC773E22BD8ABB /* XCGLogger.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = XCGLogger.modulemap; sourceTree = "<group>"; };
-		22626DA2940FDDA485C9B72EED95448C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2BCC458FDD5F692BBB2BFC64BB5701FC /* Pods-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-umbrella.h"; sourceTree = "<group>"; };
-		3A24B888F57FCD4AF1049DECA04AC69B /* XCGLogger-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "XCGLogger-umbrella.h"; sourceTree = "<group>"; };
-		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		43A4B64211A64AF0E8211334E0B0ED9A /* XCGLogger-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "XCGLogger-prefix.pch"; sourceTree = "<group>"; };
-		5EAF7A5FACF2D4A2DCF8F3256B614E7D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		600CB8958A2295E25FCDE57A9455B0CB /* XCGLogger.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = XCGLogger.xcconfig; sourceTree = "<group>"; };
-		68295F317CDB0CE9CAEB75558DF55F3B /* XCGLogger-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "XCGLogger-dummy.m"; sourceTree = "<group>"; };
-		70F60A085407CB14A2E9D637515FE200 /* XCGLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XCGLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		79A9DEDC89FE8336BF5FEDAAF75BF7FC /* Pods.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Pods.modulemap; sourceTree = "<group>"; };
-		87B213035BAC5F75386F62D3C75D2342 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
-		894E5DA93A9F359521A89826BE6DA777 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
-		977577C045EDA9D9D1F46E2598D19FC7 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
-		9C2393F964B64C579AAED24A34D3108A /* XCGLogger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XCGLogger.swift; path = XCGLogger/Library/XCGLogger/XCGLogger.swift; sourceTree = "<group>"; };
+		028C0D0CF84BBCE9B06F7EC7AC9B1FB9 /* Pods-TipCalc-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TipCalc-frameworks.sh"; sourceTree = "<group>"; };
+		09122D0233BADD6EBA3BDDDE39249A9D /* Pods-TipCalc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TipCalc.debug.xcconfig"; sourceTree = "<group>"; };
+		0E7ED5365763A6E295D62BD3FAEC3BA7 /* Pods-TipCalc WatchKit Extension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TipCalc WatchKit Extension-dummy.m"; sourceTree = "<group>"; };
+		135051B408D4ECEE4A9637712F208A45 /* Pods-TipCalc-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TipCalc-acknowledgements.markdown"; sourceTree = "<group>"; };
+		153588EAD75282FBF1905094A5CFAE20 /* Pods-TipCalc WatchKit Extension-XCGLogger.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TipCalc WatchKit Extension-XCGLogger.xcconfig"; sourceTree = "<group>"; };
+		17DD5794114AB01220604FC07005EE09 /* Pods-TipCalc WatchKit Extension-XCGLogger-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TipCalc WatchKit Extension-XCGLogger-prefix.pch"; sourceTree = "<group>"; };
+		198FB89A946B1DC56B3A0A26DDA07F30 /* XCGLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XCGLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		20FE23AC3FE83FCA0A8F190FBD2DD97B /* XCGLogger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XCGLogger.swift; path = XCGLogger/Library/XCGLogger/XCGLogger.swift; sourceTree = "<group>"; };
+		217B7AE437754A023A7CD5C91F62C73C /* Pods-TipCalc WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TipCalc WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
+		3763C02ACA9175EDD6F72FCADB9CEF63 /* Pods-TipCalc-XCGLogger-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-TipCalc-XCGLogger-prefix.pch"; path = "../Pods-TipCalc-XCGLogger/Pods-TipCalc-XCGLogger-prefix.pch"; sourceTree = "<group>"; };
+		3C1D13CD64AC1A738DF7938B5411CAFB /* Pods-TipCalc WatchKit Extension-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TipCalc WatchKit Extension-frameworks.sh"; sourceTree = "<group>"; };
+		3DE7C36499107CC3AB6C135BBB622508 /* Pods-TipCalc WatchKit Extension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TipCalc WatchKit Extension-acknowledgements.markdown"; sourceTree = "<group>"; };
+		480D239DB768CA7208401762B07CFAEB /* Pods-TipCalc-XCGLogger.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "Pods-TipCalc-XCGLogger.modulemap"; path = "../Pods-TipCalc-XCGLogger/Pods-TipCalc-XCGLogger.modulemap"; sourceTree = "<group>"; };
+		4F88D6875B13AA766B1162E79D411192 /* Pods-TipCalc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TipCalc.release.xcconfig"; sourceTree = "<group>"; };
+		57824875FC4D05B944EE4E82162036B0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		591D30AB9560B5720520D85770E53AA7 /* Pods-TipCalc-XCGLogger-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Pods-TipCalc-XCGLogger-dummy.m"; path = "../Pods-TipCalc-XCGLogger/Pods-TipCalc-XCGLogger-dummy.m"; sourceTree = "<group>"; };
+		6D79CDBEF832FB5A2106CDDC44C55D38 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		774AB38E9E779CAF9196B5AE0EFACD4C /* Pods-TipCalc-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TipCalc-acknowledgements.plist"; sourceTree = "<group>"; };
+		8C6B89BDF4940B4AF9D57D7449055DAA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		8D3AC500311E18147E8F7867ED26D62D /* Pods-TipCalc WatchKit Extension-XCGLogger-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TipCalc WatchKit Extension-XCGLogger-dummy.m"; sourceTree = "<group>"; };
+		A1F50BC0CA1D216D233E8BE00F5FFE4E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A79F75189F6721A529F2503C6C427509 /* Pods-TipCalc-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TipCalc-umbrella.h"; sourceTree = "<group>"; };
+		AE0FD80D1BE4C395ABCC7F2DB8B928C7 /* Pods-TipCalc-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TipCalc-dummy.m"; sourceTree = "<group>"; };
+		AE1C88F99179B686802C39A888504475 /* Pods-TipCalc WatchKit Extension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TipCalc WatchKit Extension-acknowledgements.plist"; sourceTree = "<group>"; };
+		B0875BFF6F9A557F367002F45901127C /* Pods-TipCalc WatchKit Extension-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TipCalc WatchKit Extension-resources.sh"; sourceTree = "<group>"; };
+		B0D647570070C8305A1F2E7AD4849CF3 /* Pods-TipCalc WatchKit Extension-XCGLogger-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TipCalc WatchKit Extension-XCGLogger-umbrella.h"; sourceTree = "<group>"; };
+		B27A25E66A37FAD20A0357CA9CBB46FB /* Pods_TipCalc_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TipCalc_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B301B8AE221838B2C256CB1B84761096 /* Pods-TipCalc.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-TipCalc.modulemap"; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		CBC0F7C552B739C909B650A0F42F7F38 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
-		D0405803033A2A777B8E4DFA0C1800ED /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
-		DA312349A49333542E6F4B36B329960E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
-		E7F21354943D9F42A70697D5A5EF72E9 /* Pods-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-frameworks.sh"; sourceTree = "<group>"; };
-		E8446514FBAD26C0E18F24A5715AEF67 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9D744909A14D3734B35A57A55F22367 /* Pods-TipCalc WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TipCalc WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		CC50E59357DABFA02C5E79DD2A30FC66 /* Pods-TipCalc WatchKit Extension-XCGLogger.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-TipCalc WatchKit Extension-XCGLogger.modulemap"; sourceTree = "<group>"; };
+		CE3A454F5437B322465920A1ED9FAF64 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../Pods-TipCalc-XCGLogger/Info.plist"; sourceTree = "<group>"; };
+		D138777C2747ED34340C3911CDD45553 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3167444DE4829D9ABE7C2D64334100C /* Pods-TipCalc-XCGLogger.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TipCalc-XCGLogger.xcconfig"; path = "../Pods-TipCalc-XCGLogger/Pods-TipCalc-XCGLogger.xcconfig"; sourceTree = "<group>"; };
+		F0907CF654CA458B516E18F962E92F2D /* Pods-TipCalc WatchKit Extension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TipCalc WatchKit Extension-umbrella.h"; sourceTree = "<group>"; };
+		F1B316819B03BBB3BAA25AFB5D0C131A /* Pods-TipCalc-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TipCalc-resources.sh"; sourceTree = "<group>"; };
+		F742631CB1DE8CA3115146C8EF5663C2 /* Pods_TipCalc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TipCalc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC6922B7997B36D6D53237C59214BADC /* Pods-TipCalc WatchKit Extension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-TipCalc WatchKit Extension.modulemap"; sourceTree = "<group>"; };
+		FEA333B921829880AF29B654BA8E8EC5 /* Pods-TipCalc-XCGLogger-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-TipCalc-XCGLogger-umbrella.h"; path = "../Pods-TipCalc-XCGLogger/Pods-TipCalc-XCGLogger-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9F4ED01A22C0C5052CBBFFB7739ABE28 /* Frameworks */ = {
+		98F7044FEDD039E21938E0B91AC30F73 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F20A1A9988512AB5BEAB046B5C3FDEBA /* Foundation.framework in Frameworks */,
+				B9785BD9357F741C6F913B3F89C6AEF4 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B4293133EDD97DF0F58488D14F568A46 /* Frameworks */ = {
+		B90116E19A56E8E9E66B28A3D9E5C254 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B61A4CE21CDF73A34F055220E82C106 /* Foundation.framework in Frameworks */,
+				8AA50AF1C22FAD12E3B9AE5EA923533A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC58206A3F7F6B3ECE03592B0E7E68AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC25EB68E0898C9E7529DF7F90BF2C5B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4146A949BCCCA7977CFEB1BD55CCDAB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E9243EF8E19EFC554BAA763F4FB87DC /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4C6A1EFCF01D8057AB464775FC56B0FE /* XCGLogger */ = {
+		0516C56DAEB05B726197DCBEC87A9975 /* XCGLogger */ = {
 			isa = PBXGroup;
 			children = (
-				9C2393F964B64C579AAED24A34D3108A /* XCGLogger.swift */,
-				F65B6B8850F8232E1882EE428716C9AC /* Support Files */,
+				20FE23AC3FE83FCA0A8F190FBD2DD97B /* XCGLogger.swift */,
+				70241F68CEF9F25237F0DE5307E86D43 /* Support Files */,
 			);
 			path = XCGLogger;
+			sourceTree = "<group>";
+		};
+		5122A3F52D800E80BACD9CC992713105 /* watchOS */ = {
+			isa = PBXGroup;
+			children = (
+				8C6B89BDF4940B4AF9D57D7449055DAA /* Foundation.framework */,
+			);
+			name = watchOS;
 			sourceTree = "<group>";
 		};
 		5B38F34E769B260672981645F1146BA3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4C6A1EFCF01D8057AB464775FC56B0FE /* XCGLogger */,
+				0516C56DAEB05B726197DCBEC87A9975 /* XCGLogger */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		75D98FF52E597A11900E131B6C4E1ADA /* Pods */ = {
+		70241F68CEF9F25237F0DE5307E86D43 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				E8446514FBAD26C0E18F24A5715AEF67 /* Info.plist */,
-				79A9DEDC89FE8336BF5FEDAAF75BF7FC /* Pods.modulemap */,
-				D0405803033A2A777B8E4DFA0C1800ED /* Pods-acknowledgements.markdown */,
-				87B213035BAC5F75386F62D3C75D2342 /* Pods-acknowledgements.plist */,
-				894E5DA93A9F359521A89826BE6DA777 /* Pods-dummy.m */,
-				E7F21354943D9F42A70697D5A5EF72E9 /* Pods-frameworks.sh */,
-				CBC0F7C552B739C909B650A0F42F7F38 /* Pods-resources.sh */,
-				2BCC458FDD5F692BBB2BFC64BB5701FC /* Pods-umbrella.h */,
-				977577C045EDA9D9D1F46E2598D19FC7 /* Pods.debug.xcconfig */,
-				DA312349A49333542E6F4B36B329960E /* Pods.release.xcconfig */,
+				CE3A454F5437B322465920A1ED9FAF64 /* Info.plist */,
+				57824875FC4D05B944EE4E82162036B0 /* Info.plist */,
+				CC50E59357DABFA02C5E79DD2A30FC66 /* Pods-TipCalc WatchKit Extension-XCGLogger.modulemap */,
+				153588EAD75282FBF1905094A5CFAE20 /* Pods-TipCalc WatchKit Extension-XCGLogger.xcconfig */,
+				8D3AC500311E18147E8F7867ED26D62D /* Pods-TipCalc WatchKit Extension-XCGLogger-dummy.m */,
+				17DD5794114AB01220604FC07005EE09 /* Pods-TipCalc WatchKit Extension-XCGLogger-prefix.pch */,
+				B0D647570070C8305A1F2E7AD4849CF3 /* Pods-TipCalc WatchKit Extension-XCGLogger-umbrella.h */,
+				480D239DB768CA7208401762B07CFAEB /* Pods-TipCalc-XCGLogger.modulemap */,
+				E3167444DE4829D9ABE7C2D64334100C /* Pods-TipCalc-XCGLogger.xcconfig */,
+				591D30AB9560B5720520D85770E53AA7 /* Pods-TipCalc-XCGLogger-dummy.m */,
+				3763C02ACA9175EDD6F72FCADB9CEF63 /* Pods-TipCalc-XCGLogger-prefix.pch */,
+				FEA333B921829880AF29B654BA8E8EC5 /* Pods-TipCalc-XCGLogger-umbrella.h */,
 			);
-			name = Pods;
-			path = "Target Support Files/Pods";
+			name = "Support Files";
+			path = "../Target Support Files/Pods-TipCalc WatchKit Extension-XCGLogger";
+			sourceTree = "<group>";
+		};
+		79809A8F03D0AE42DB51B8A9A099CA67 /* Pods-TipCalc */ = {
+			isa = PBXGroup;
+			children = (
+				A1F50BC0CA1D216D233E8BE00F5FFE4E /* Info.plist */,
+				B301B8AE221838B2C256CB1B84761096 /* Pods-TipCalc.modulemap */,
+				135051B408D4ECEE4A9637712F208A45 /* Pods-TipCalc-acknowledgements.markdown */,
+				774AB38E9E779CAF9196B5AE0EFACD4C /* Pods-TipCalc-acknowledgements.plist */,
+				AE0FD80D1BE4C395ABCC7F2DB8B928C7 /* Pods-TipCalc-dummy.m */,
+				028C0D0CF84BBCE9B06F7EC7AC9B1FB9 /* Pods-TipCalc-frameworks.sh */,
+				F1B316819B03BBB3BAA25AFB5D0C131A /* Pods-TipCalc-resources.sh */,
+				A79F75189F6721A529F2503C6C427509 /* Pods-TipCalc-umbrella.h */,
+				09122D0233BADD6EBA3BDDDE39249A9D /* Pods-TipCalc.debug.xcconfig */,
+				4F88D6875B13AA766B1162E79D411192 /* Pods-TipCalc.release.xcconfig */,
+			);
+			name = "Pods-TipCalc";
+			path = "Target Support Files/Pods-TipCalc";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				8F91EE078EA3977443D1BDC2601132EF /* Frameworks */,
 				5B38F34E769B260672981645F1146BA3 /* Pods */,
-				D7BD86A83A012FC0C5E8A070E0AFB23D /* Products */,
-				B7B80995527643776607AFFA75B91E24 /* Targets Support Files */,
+				AA7313E3A9D45751349E4BBD9F6F1DE6 /* Products */,
+				D88989D3A26EBA49EDAF4F3C6B57D68F /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		B7B80995527643776607AFFA75B91E24 /* Targets Support Files */ = {
+		8F91EE078EA3977443D1BDC2601132EF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				75D98FF52E597A11900E131B6C4E1ADA /* Pods */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */,
+				BEA166D13A2FBD7DDAD7CEE0F68399FD /* iOS */,
+				5122A3F52D800E80BACD9CC992713105 /* watchOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */ = {
+		AA7313E3A9D45751349E4BBD9F6F1DE6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		D7BD86A83A012FC0C5E8A070E0AFB23D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5EAF7A5FACF2D4A2DCF8F3256B614E7D /* Pods.framework */,
-				70F60A085407CB14A2E9D637515FE200 /* XCGLogger.framework */,
+				F742631CB1DE8CA3115146C8EF5663C2 /* Pods_TipCalc.framework */,
+				B27A25E66A37FAD20A0357CA9CBB46FB /* Pods_TipCalc_WatchKit_Extension.framework */,
+				198FB89A946B1DC56B3A0A26DDA07F30 /* XCGLogger.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F65B6B8850F8232E1882EE428716C9AC /* Support Files */ = {
+		BEA166D13A2FBD7DDAD7CEE0F68399FD /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				22626DA2940FDDA485C9B72EED95448C /* Info.plist */,
-				2169620C40B617FB8CEC773E22BD8ABB /* XCGLogger.modulemap */,
-				600CB8958A2295E25FCDE57A9455B0CB /* XCGLogger.xcconfig */,
-				68295F317CDB0CE9CAEB75558DF55F3B /* XCGLogger-dummy.m */,
-				43A4B64211A64AF0E8211334E0B0ED9A /* XCGLogger-prefix.pch */,
-				3A24B888F57FCD4AF1049DECA04AC69B /* XCGLogger-umbrella.h */,
+				6D79CDBEF832FB5A2106CDDC44C55D38 /* Foundation.framework */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/XCGLogger";
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		D88989D3A26EBA49EDAF4F3C6B57D68F /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				79809A8F03D0AE42DB51B8A9A099CA67 /* Pods-TipCalc */,
+				DDECD8FCF52C9E4AF4E649B897731CE2 /* Pods-TipCalc WatchKit Extension */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		DDECD8FCF52C9E4AF4E649B897731CE2 /* Pods-TipCalc WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D138777C2747ED34340C3911CDD45553 /* Info.plist */,
+				FC6922B7997B36D6D53237C59214BADC /* Pods-TipCalc WatchKit Extension.modulemap */,
+				3DE7C36499107CC3AB6C135BBB622508 /* Pods-TipCalc WatchKit Extension-acknowledgements.markdown */,
+				AE1C88F99179B686802C39A888504475 /* Pods-TipCalc WatchKit Extension-acknowledgements.plist */,
+				0E7ED5365763A6E295D62BD3FAEC3BA7 /* Pods-TipCalc WatchKit Extension-dummy.m */,
+				3C1D13CD64AC1A738DF7938B5411CAFB /* Pods-TipCalc WatchKit Extension-frameworks.sh */,
+				B0875BFF6F9A557F367002F45901127C /* Pods-TipCalc WatchKit Extension-resources.sh */,
+				F0907CF654CA458B516E18F962E92F2D /* Pods-TipCalc WatchKit Extension-umbrella.h */,
+				C9D744909A14D3734B35A57A55F22367 /* Pods-TipCalc WatchKit Extension.debug.xcconfig */,
+				217B7AE437754A023A7CD5C91F62C73C /* Pods-TipCalc WatchKit Extension.release.xcconfig */,
+			);
+			name = "Pods-TipCalc WatchKit Extension";
+			path = "Target Support Files/Pods-TipCalc WatchKit Extension";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		BB61C977FAC6D11784935328B014D8EA /* Headers */ = {
+		5911B41C3E4F458AB945BC0D1E81105B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				817400981D3D46A650C38F2D073B2045 /* Pods-umbrella.h in Headers */,
+				1F6D440F11D367349D096E0E526BDF0A /* Pods-TipCalc-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C353013E621CF2452F3A044F30DB9725 /* Headers */ = {
+		A2A488DCB3F4E76C38269FC6C1EEAF84 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD25B7DA05BBEA6892C79AEA41B8B093 /* XCGLogger-umbrella.h in Headers */,
+				12EFFD86566BE35B3A6836E38F974013 /* Pods-TipCalc-XCGLogger-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF099E2669279D112EC741B40B1C2879 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4553EA7DA43157C45E39A2C79C5ABBDE /* Pods-TipCalc WatchKit Extension-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3B968607B2C36E8DCED9DD75EBDCC9A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E39B8B428CB4BDABA5EFC7902914876B /* Pods-TipCalc WatchKit Extension-XCGLogger-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		7ADBFD334DD9E744544CF13175A595CA /* XCGLogger */ = {
+		09B38404C356B560DFCDFFEEAE6DF834 /* Pods-TipCalc */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 584C10E4CDDD8ED453AB9F0EA00D65AA /* Build configuration list for PBXNativeTarget "XCGLogger" */;
+			buildConfigurationList = 79239936341DDDDD03D75CBBE4F0663E /* Build configuration list for PBXNativeTarget "Pods-TipCalc" */;
 			buildPhases = (
-				4652D5721A06187996276235F44EFA4D /* Sources */,
-				9F4ED01A22C0C5052CBBFFB7739ABE28 /* Frameworks */,
-				C353013E621CF2452F3A044F30DB9725 /* Headers */,
+				E2D060214247B90B91258475A359183D /* Sources */,
+				BC58206A3F7F6B3ECE03592B0E7E68AF /* Frameworks */,
+				5911B41C3E4F458AB945BC0D1E81105B /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C872E73C8A0EB98A66B5BFD4339F6152 /* PBXTargetDependency */,
 			);
-			name = XCGLogger;
-			productName = XCGLogger;
-			productReference = 70F60A085407CB14A2E9D637515FE200 /* XCGLogger.framework */;
+			name = "Pods-TipCalc";
+			productName = "Pods-TipCalc";
+			productReference = F742631CB1DE8CA3115146C8EF5663C2 /* Pods_TipCalc.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		E5ADC96556450146C4CE655EB3CFDF02 /* Pods */ = {
+		4D29FAE43A530A90F845880CA002CDB0 /* Pods-TipCalc-XCGLogger */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C9941FC18A2DECC0C9A73FDB735A73F4 /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildConfigurationList = CD2A75DE563FEB773E0AF4EC92FB3742 /* Build configuration list for PBXNativeTarget "Pods-TipCalc-XCGLogger" */;
 			buildPhases = (
-				5A56A452F39BD47435092B83B6525454 /* Sources */,
-				B4293133EDD97DF0F58488D14F568A46 /* Frameworks */,
-				BB61C977FAC6D11784935328B014D8EA /* Headers */,
+				CD5E18FA928E22A74F8549B56634B2F8 /* Sources */,
+				98F7044FEDD039E21938E0B91AC30F73 /* Frameworks */,
+				A2A488DCB3F4E76C38269FC6C1EEAF84 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				4E77E11FABB8D4FB421EC5E77914C016 /* PBXTargetDependency */,
 			);
-			name = Pods;
-			productName = Pods;
-			productReference = 5EAF7A5FACF2D4A2DCF8F3256B614E7D /* Pods.framework */;
+			name = "Pods-TipCalc-XCGLogger";
+			productName = "Pods-TipCalc-XCGLogger";
+			productReference = 198FB89A946B1DC56B3A0A26DDA07F30 /* XCGLogger.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		97C2474533D271582A2951880424D21E /* Pods-TipCalc WatchKit Extension-XCGLogger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07D51B6D1084EA1FA841EBA55254A7A6 /* Build configuration list for PBXNativeTarget "Pods-TipCalc WatchKit Extension-XCGLogger" */;
+			buildPhases = (
+				CC52B861C2379366D512B12EDCC5A626 /* Sources */,
+				B90116E19A56E8E9E66B28A3D9E5C254 /* Frameworks */,
+				F3B968607B2C36E8DCED9DD75EBDCC9A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-TipCalc WatchKit Extension-XCGLogger";
+			productName = "Pods-TipCalc WatchKit Extension-XCGLogger";
+			productReference = 198FB89A946B1DC56B3A0A26DDA07F30 /* XCGLogger.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		ED1D1DE37939D828083EE3A77304A070 /* Pods-TipCalc WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7564A8FA5E42A8D50FB691087B2B10B2 /* Build configuration list for PBXNativeTarget "Pods-TipCalc WatchKit Extension" */;
+			buildPhases = (
+				2D25B9B356B419F653D54E454D1294B8 /* Sources */,
+				F4146A949BCCCA7977CFEB1BD55CCDAB /* Frameworks */,
+				EF099E2669279D112EC741B40B1C2879 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A13499D8E2FF8DE538B86B149F1C0F22 /* PBXTargetDependency */,
+			);
+			name = "Pods-TipCalc WatchKit Extension";
+			productName = "Pods-TipCalc WatchKit Extension";
+			productReference = B27A25E66A37FAD20A0357CA9CBB46FB /* Pods_TipCalc_WatchKit_Extension.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -237,49 +371,74 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = D7BD86A83A012FC0C5E8A070E0AFB23D /* Products */;
+			productRefGroup = AA7313E3A9D45751349E4BBD9F6F1DE6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E5ADC96556450146C4CE655EB3CFDF02 /* Pods */,
-				7ADBFD334DD9E744544CF13175A595CA /* XCGLogger */,
+				09B38404C356B560DFCDFFEEAE6DF834 /* Pods-TipCalc */,
+				ED1D1DE37939D828083EE3A77304A070 /* Pods-TipCalc WatchKit Extension */,
+				97C2474533D271582A2951880424D21E /* Pods-TipCalc WatchKit Extension-XCGLogger */,
+				4D29FAE43A530A90F845880CA002CDB0 /* Pods-TipCalc-XCGLogger */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4652D5721A06187996276235F44EFA4D /* Sources */ = {
+		2D25B9B356B419F653D54E454D1294B8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6CA3EA649AABA2BDE276639BE4958A1 /* XCGLogger-dummy.m in Sources */,
-				F12F92B4C7B8929B14C9DABB4599B25A /* XCGLogger.swift in Sources */,
+				5478854F9CC4FFDFFA63EFE06D033D52 /* Pods-TipCalc WatchKit Extension-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5A56A452F39BD47435092B83B6525454 /* Sources */ = {
+		CC52B861C2379366D512B12EDCC5A626 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE98FDD754EBF448A82845EC4C1F344A /* Pods-dummy.m in Sources */,
+				C76D3B74C50F98765A41D2B12FD0AD19 /* Pods-TipCalc WatchKit Extension-XCGLogger-dummy.m in Sources */,
+				2F70F1B185C1584352ADD6BFF5724ACD /* XCGLogger.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD5E18FA928E22A74F8549B56634B2F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8804C6AE2689A5F8530FCD922C7D64A0 /* Pods-TipCalc-XCGLogger-dummy.m in Sources */,
+				7EDD405647DC9A9C718C91AF975B7857 /* XCGLogger.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2D060214247B90B91258475A359183D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E08BC3D80F15825A4E455F6B8A949B06 /* Pods-TipCalc-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4E77E11FABB8D4FB421EC5E77914C016 /* PBXTargetDependency */ = {
+		A13499D8E2FF8DE538B86B149F1C0F22 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = XCGLogger;
-			target = 7ADBFD334DD9E744544CF13175A595CA /* XCGLogger */;
-			targetProxy = BD2F416266D88A09CD33195D31625833 /* PBXContainerItemProxy */;
+			name = "Pods-TipCalc WatchKit Extension-XCGLogger";
+			target = 97C2474533D271582A2951880424D21E /* Pods-TipCalc WatchKit Extension-XCGLogger */;
+			targetProxy = 9471381A5E5229251EB2938691F7A401 /* PBXContainerItemProxy */;
+		};
+		C872E73C8A0EB98A66B5BFD4339F6152 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-TipCalc-XCGLogger";
+			target = 4D29FAE43A530A90F845880CA002CDB0 /* Pods-TipCalc-XCGLogger */;
+			targetProxy = 3BFA41B7C806D78ABE42FB48216F959B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		110776FC0BE1225F58714FB236DEBF4A /* Debug */ = {
+		0315EA809AE307B94E62020934DC8B84 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 977577C045EDA9D9D1F46E2598D19FC7 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = E3167444DE4829D9ABE7C2D64334100C /* Pods-TipCalc-XCGLogger.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -288,43 +447,12 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-TipCalc-XCGLogger/Pods-TipCalc-XCGLogger-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-TipCalc-XCGLogger/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods/Pods.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		37624664616780C2D1208FAD42F4947F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 600CB8958A2295E25FCDE57A9455B0CB /* XCGLogger.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/XCGLogger/XCGLogger-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/XCGLogger/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/XCGLogger/XCGLogger.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-TipCalc-XCGLogger/Pods-TipCalc-XCGLogger.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = XCGLogger;
 				SDKROOT = iphoneos;
@@ -335,9 +463,64 @@
 			};
 			name = Release;
 		};
-		740BFB20A8CD27ED502318F189C47178 /* Debug */ = {
+		1DABDDFF778B94E84B19043B087320D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 600CB8958A2295E25FCDE57A9455B0CB /* XCGLogger.xcconfig */;
+			baseConfigurationReference = 153588EAD75282FBF1905094A5CFAE20 /* Pods-TipCalc WatchKit Extension-XCGLogger.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-TipCalc WatchKit Extension-XCGLogger/Pods-TipCalc WatchKit Extension-XCGLogger-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-TipCalc WatchKit Extension-XCGLogger/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-TipCalc WatchKit Extension-XCGLogger/Pods-TipCalc WatchKit Extension-XCGLogger.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = XCGLogger;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		2E18AC5A7786538993841A270F2760D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9D744909A14D3734B35A57A55F22367 /* Pods-TipCalc WatchKit Extension.debug.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TipCalc WatchKit Extension/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TipCalc WatchKit Extension/Pods-TipCalc WatchKit Extension.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_TipCalc_WatchKit_Extension;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		32DD45EE6D23E04B75F4E87735EE430E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09122D0233BADD6EBA3BDDDE39249A9D /* Pods-TipCalc.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -346,14 +529,17 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/XCGLogger/XCGLogger-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/XCGLogger/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-TipCalc/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/XCGLogger/XCGLogger.modulemap";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TipCalc/Pods-TipCalc.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = XCGLogger;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_TipCalc;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -363,7 +549,125 @@
 			};
 			name = Debug;
 		};
-		A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */ = {
+		51AD868790088F77AA2F01C24764F755 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F88D6875B13AA766B1162E79D411192 /* Pods-TipCalc.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TipCalc/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TipCalc/Pods-TipCalc.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_TipCalc;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5BF38ACC4A2F22014BDBFEF53683CD44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		6856252092E2656F0CD54BC8F92D85D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 217B7AE437754A023A7CD5C91F62C73C /* Pods-TipCalc WatchKit Extension.release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TipCalc WatchKit Extension/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TipCalc WatchKit Extension/Pods-TipCalc WatchKit Extension.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_TipCalc_WatchKit_Extension;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		B1850A42047A8A8B45FC065C7067C451 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 153588EAD75282FBF1905094A5CFAE20 /* Pods-TipCalc WatchKit Extension-XCGLogger.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-TipCalc WatchKit Extension-XCGLogger/Pods-TipCalc WatchKit Extension-XCGLogger-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-TipCalc WatchKit Extension-XCGLogger/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-TipCalc WatchKit Extension-XCGLogger/Pods-TipCalc WatchKit Extension-XCGLogger.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = XCGLogger;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		C349C737A585A62E420B6D88D1470E40 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -395,16 +699,17 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				ONLY_ACTIVE_ARCH = YES;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
-		E575A91DABEBAC0AB97849A633C1856D /* Release */ = {
+		EACD52D18824B97DCAA8B67103811CD5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DA312349A49333542E6F4B36B329960E /* Pods.release.xcconfig */;
+			baseConfigurationReference = E3167444DE4829D9ABE7C2D64334100C /* Pods-TipCalc-XCGLogger.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -413,85 +718,67 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-TipCalc-XCGLogger/Pods-TipCalc-XCGLogger-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-TipCalc-XCGLogger/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods/Pods.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods;
+				MODULEMAP_FILE = "Target Support Files/Pods-TipCalc-XCGLogger/Pods-TipCalc-XCGLogger.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = XCGLogger;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
-		};
-		FB45FFD90572718D82AB9092B750F0CA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		07D51B6D1084EA1FA841EBA55254A7A6 /* Build configuration list for PBXNativeTarget "Pods-TipCalc WatchKit Extension-XCGLogger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DABDDFF778B94E84B19043B087320D6 /* Debug */,
+				B1850A42047A8A8B45FC065C7067C451 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */,
-				FB45FFD90572718D82AB9092B750F0CA /* Release */,
+				C349C737A585A62E420B6D88D1470E40 /* Debug */,
+				5BF38ACC4A2F22014BDBFEF53683CD44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		584C10E4CDDD8ED453AB9F0EA00D65AA /* Build configuration list for PBXNativeTarget "XCGLogger" */ = {
+		7564A8FA5E42A8D50FB691087B2B10B2 /* Build configuration list for PBXNativeTarget "Pods-TipCalc WatchKit Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				740BFB20A8CD27ED502318F189C47178 /* Debug */,
-				37624664616780C2D1208FAD42F4947F /* Release */,
+				2E18AC5A7786538993841A270F2760D3 /* Debug */,
+				6856252092E2656F0CD54BC8F92D85D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C9941FC18A2DECC0C9A73FDB735A73F4 /* Build configuration list for PBXNativeTarget "Pods" */ = {
+		79239936341DDDDD03D75CBBE4F0663E /* Build configuration list for PBXNativeTarget "Pods-TipCalc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				110776FC0BE1225F58714FB236DEBF4A /* Debug */,
-				E575A91DABEBAC0AB97849A633C1856D /* Release */,
+				32DD45EE6D23E04B75F4E87735EE430E /* Debug */,
+				51AD868790088F77AA2F01C24764F755 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD2A75DE563FEB773E0AF4EC92FB3742 /* Build configuration list for PBXNativeTarget "Pods-TipCalc-XCGLogger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EACD52D18824B97DCAA8B67103811CD5 /* Debug */,
+				0315EA809AE307B94E62020934DC8B84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

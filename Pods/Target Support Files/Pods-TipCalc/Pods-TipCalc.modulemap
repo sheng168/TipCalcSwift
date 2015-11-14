@@ -1,0 +1,6 @@
+framework module Pods_TipCalc {
+  umbrella header "Pods-TipCalc-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module XCGLogger {
+  umbrella header "Pods-TipCalc WatchKit Extension-XCGLogger-umbrella.h"
+
+  export *
+  module * { export * }
+}

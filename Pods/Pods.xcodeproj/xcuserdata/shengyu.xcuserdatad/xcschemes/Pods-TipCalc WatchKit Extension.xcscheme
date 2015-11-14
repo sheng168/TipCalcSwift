@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'D4F8750B72BEF2092B4E7FCC'
-               BlueprintName = 'Pods'
+               BlueprintIdentifier = 'AF124024FC20B5D62F71E1D0'
+               BlueprintName = 'Pods-TipCalc WatchKit Extension'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Pods.framework'>
+               BuildableName = 'Pods_TipCalc_WatchKit_Extension.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

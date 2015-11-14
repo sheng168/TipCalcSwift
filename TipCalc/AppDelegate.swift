@@ -10,6 +10,9 @@ import UIKit
 //import Parse
 //import Firebase
 //import DateKit
+import XCGLogger
+
+let log = XCGLogger.defaultInstance()
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,6 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
 //        Parse.enableLocalDatastore()
 //        Parse.setApplicationId("ss", clientKe: "ss")
+        log.setup(.Debug, showThreadName: true, showLogLevel: true, showFileNames: true, showLineNumbers: true, writeToFile: nil, fileLogLevel: .Debug)
+        
+        log.debug("")
         
         return true
     }

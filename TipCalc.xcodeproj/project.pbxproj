@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		17F8668B68EA85E8AF73ED75 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C933A9EB901CE7F27BC13F /* Pods.framework */; };
-		311F276A1BDFF3AB0026B3CD /* XCGLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311F27691BDFF3AB0026B3CD /* XCGLogger.swift */; };
 		31AD64551BDC690200BB8419 /* TipCalculatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BC32511BBF70050022FE16 /* TipCalculatorModel.swift */; };
 		31BC31F71BBF6CB70022FE16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BC31F61BBF6CB70022FE16 /* AppDelegate.swift */; };
 		31BC31F91BBF6CB70022FE16 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BC31F81BBF6CB70022FE16 /* ViewController.swift */; };
@@ -28,6 +27,8 @@
 		31BC323A1BBF6CB80022FE16 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BC32391BBF6CB80022FE16 /* ComplicationController.swift */; };
 		31BC323C1BBF6CB80022FE16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31BC323B1BBF6CB80022FE16 /* Assets.xcassets */; };
 		31BC32521BBF70050022FE16 /* TipCalculatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BC32511BBF70050022FE16 /* TipCalculatorModel.swift */; };
+		4504F86F020A96682D08E9AF /* Pods_TipCalc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 389C036B98FF52A4C1B30613 /* Pods_TipCalc.framework */; };
+		DE53B008999F91791DA6F2C9 /* Pods_TipCalc_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842ACDE49244662048479022 /* Pods_TipCalc_WatchKit_Extension.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,7 +89,6 @@
 
 /* Begin PBXFileReference section */
 		311F27671BDFF3630026B3CD /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCGLogger.framework; path = "Pods/../build/Debug-iphoneos/XCGLogger.framework"; sourceTree = "<group>"; };
-		311F27691BDFF3AB0026B3CD /* XCGLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCGLogger.swift; sourceTree = "<group>"; };
 		31BC31F31BBF6CB70022FE16 /* TipCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31BC31F61BBF6CB70022FE16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31BC31F81BBF6CB70022FE16 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -117,17 +117,29 @@
 		31BC323D1BBF6CB80022FE16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31BC32511BBF70050022FE16 /* TipCalculatorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipCalculatorModel.swift; sourceTree = "<group>"; };
 		31BEF78C1BD98A3F00774961 /* TipCalc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TipCalc-Bridging-Header.h"; sourceTree = "<group>"; };
+		389C036B98FF52A4C1B30613 /* Pods_TipCalc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TipCalc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C933A9EB901CE7F27BC13F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C56011765F085913E05E9880 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		CCED1AC656D0572A05E24586 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		5CDA444E993EBC263FB9FAF7 /* Pods-TipCalc WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TipCalc WatchKit Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-TipCalc WatchKit Extension/Pods-TipCalc WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
+		7320CFE7F2C0EFA3E221C078 /* Pods-TipCalc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TipCalc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TipCalc/Pods-TipCalc.debug.xcconfig"; sourceTree = "<group>"; };
+		761B6AB95868FFDDAC1427BB /* Pods-TipCalc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TipCalc.release.xcconfig"; path = "Pods/Target Support Files/Pods-TipCalc/Pods-TipCalc.release.xcconfig"; sourceTree = "<group>"; };
+		842ACDE49244662048479022 /* Pods_TipCalc_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TipCalc_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFA702D40BCE34497613DED6 /* Pods-TipCalc WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TipCalc WatchKit Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TipCalc WatchKit Extension/Pods-TipCalc WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2769A8C2C31B437E6435A952 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		31BC31F01BBF6CB70022FE16 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				17F8668B68EA85E8AF73ED75 /* Pods.framework in Frameworks */,
+				4504F86F020A96682D08E9AF /* Pods_TipCalc.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +161,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE53B008999F91791DA6F2C9 /* Pods_TipCalc_WatchKit_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,8 +177,8 @@
 				31BC321F1BBF6CB80022FE16 /* TipCalc WatchKit App */,
 				31BC322E1BBF6CB80022FE16 /* TipCalc WatchKit Extension */,
 				31BC31F41BBF6CB70022FE16 /* Products */,
-				7A2B4A0B63A902BB1572AD2D /* Pods */,
 				95EB8751B5B67B182EAEB244 /* Frameworks */,
+				768921BA1DE0BECD2C9B22DF /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -227,7 +240,6 @@
 		31BC322E1BBF6CB80022FE16 /* TipCalc WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				311F27691BDFF3AB0026B3CD /* XCGLogger.swift */,
 				31BC32311BBF6CB80022FE16 /* InterfaceController.swift */,
 				31BC32331BBF6CB80022FE16 /* ExtensionDelegate.swift */,
 				31BC32351BBF6CB80022FE16 /* NotificationController.swift */,
@@ -248,11 +260,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		7A2B4A0B63A902BB1572AD2D /* Pods */ = {
+		768921BA1DE0BECD2C9B22DF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CCED1AC656D0572A05E24586 /* Pods.debug.xcconfig */,
-				C56011765F085913E05E9880 /* Pods.release.xcconfig */,
+				7320CFE7F2C0EFA3E221C078 /* Pods-TipCalc.debug.xcconfig */,
+				761B6AB95868FFDDAC1427BB /* Pods-TipCalc.release.xcconfig */,
+				EFA702D40BCE34497613DED6 /* Pods-TipCalc WatchKit Extension.debug.xcconfig */,
+				5CDA444E993EBC263FB9FAF7 /* Pods-TipCalc WatchKit Extension.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -262,6 +276,8 @@
 			children = (
 				311F27671BDFF3630026B3CD /* XCGLogger.framework */,
 				55C933A9EB901CE7F27BC13F /* Pods.framework */,
+				389C036B98FF52A4C1B30613 /* Pods_TipCalc.framework */,
+				842ACDE49244662048479022 /* Pods_TipCalc_WatchKit_Extension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -273,13 +289,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 31BC32481BBF6CB80022FE16 /* Build configuration list for PBXNativeTarget "TipCalc" */;
 			buildPhases = (
-				604BB0763C0882E770C23815 /* Check Pods Manifest.lock */,
+				6FE12F31DDB12B9DD83B1F50 /* Check Pods Manifest.lock */,
 				31BC31EF1BBF6CB70022FE16 /* Sources */,
 				31BC31F01BBF6CB70022FE16 /* Frameworks */,
 				31BC31F11BBF6CB70022FE16 /* Resources */,
 				31BC32471BBF6CB80022FE16 /* Embed Watch Content */,
-				28527846B8E25E8A6CA25738 /* Embed Pods Frameworks */,
-				15B2558D4487915E9D5D8A92 /* Copy Pods Resources */,
+				115915D64038E414A0DFE23B /* Embed Pods Frameworks */,
+				29D44117DEE185A648B0D09D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -333,6 +349,7 @@
 			buildPhases = (
 				31BC32191BBF6CB80022FE16 /* Resources */,
 				31BC32431BBF6CB80022FE16 /* Embed App Extensions */,
+				2769A8C2C31B437E6435A952 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -348,9 +365,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 31BC32401BBF6CB80022FE16 /* Build configuration list for PBXNativeTarget "TipCalc WatchKit Extension" */;
 			buildPhases = (
+				DDD1F6E19980A4A29CE2C1D9 /* Check Pods Manifest.lock */,
 				31BC32261BBF6CB80022FE16 /* Sources */,
 				31BC32271BBF6CB80022FE16 /* Frameworks */,
 				31BC32281BBF6CB80022FE16 /* Resources */,
+				AA4E6B7CCB00D2A3EB652DFB /* Embed Pods Frameworks */,
+				B89AFDA3F653888A0BAD9B8A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -459,22 +479,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		15B2558D4487915E9D5D8A92 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		28527846B8E25E8A6CA25738 /* Embed Pods Frameworks */ = {
+		115915D64038E414A0DFE23B /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -486,10 +491,70 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TipCalc/Pods-TipCalc-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		604BB0763C0882E770C23815 /* Check Pods Manifest.lock */ = {
+		29D44117DEE185A648B0D09D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TipCalc/Pods-TipCalc-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6FE12F31DDB12B9DD83B1F50 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AA4E6B7CCB00D2A3EB652DFB /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TipCalc WatchKit Extension/Pods-TipCalc WatchKit Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B89AFDA3F653888A0BAD9B8A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TipCalc WatchKit Extension/Pods-TipCalc WatchKit Extension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DDD1F6E19980A4A29CE2C1D9 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -538,7 +603,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				31BC32361BBF6CB80022FE16 /* NotificationController.swift in Sources */,
-				311F276A1BDFF3AB0026B3CD /* XCGLogger.swift in Sources */,
 				31BC32341BBF6CB80022FE16 /* ExtensionDelegate.swift in Sources */,
 				31BC323A1BBF6CB80022FE16 /* ComplicationController.swift in Sources */,
 				31AD64551BDC690200BB8419 /* TipCalculatorModel.swift in Sources */,
@@ -687,6 +751,7 @@
 		};
 		31BC32411BBF6CB80022FE16 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFA702D40BCE34497613DED6 /* Pods-TipCalc WatchKit Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -709,6 +774,7 @@
 		};
 		31BC32421BBF6CB80022FE16 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CDA444E993EBC263FB9FAF7 /* Pods-TipCalc WatchKit Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -769,7 +835,7 @@
 		};
 		31BC32491BBF6CB80022FE16 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CCED1AC656D0572A05E24586 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 7320CFE7F2C0EFA3E221C078 /* Pods-TipCalc.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -790,7 +856,7 @@
 		};
 		31BC324A1BBF6CB80022FE16 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C56011765F085913E05E9880 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 761B6AB95868FFDDAC1427BB /* Pods-TipCalc.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
