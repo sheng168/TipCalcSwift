@@ -1,0 +1,10 @@
+PODS:
+  - XCGLogger (3.0)
+
+DEPENDENCIES:
+  - XCGLogger
+
+SPEC CHECKSUMS:
+  XCGLogger: 5802533aff8bafc8b3b9776ab8972576f31d0a4e
+
+COCOAPODS: 0.39.0
