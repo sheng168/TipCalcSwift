@@ -14,9 +14,9 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     // MARK: - Timeline Configuration
     
     func getSupportedTimeTravelDirectionsForComplication(complication: CLKComplication, withHandler handler: (CLKComplicationTimeTravelDirections) -> Void) {
-//        handler([.None])
+        handler([.None])
         log.debug("getSupportedTimeTravelDirectionsForComplication")
-        handler([.Forward, .Backward])
+//        handler([.Forward, .Backward])
     }
     
     func getTimelineStartDateForComplication(complication: CLKComplication, withHandler handler: (NSDate?) -> Void) {
@@ -69,49 +69,56 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getTimelineEntriesForComplication(complication: CLKComplication, beforeDate date: NSDate, limit: Int, withHandler handler: (([CLKComplicationTimelineEntry]?) -> Void)) {
         // Call the handler with the timeline entries prior to the given date
-        log.debug("getTimelineEntriesForComplication beforeDate")
+        log.debug("\(date) \(limit)")
         
-        var array = [CLKComplicationTimelineEntry]()
-        
-        for i in 1 ... limit {
-            let t = getTemplateForComplication(complication, bill: Double(i))
-
-            let entry = CLKComplicationTimelineEntry(date: NSDate(timeIntervalSinceNow: -60.0*Double(i)), complicationTemplate: t)
-            array.append(entry)
+        dispatch_async(dispatch_get_global_queue(QOS_CLASS_UTILITY, 0)) {
+            var array = [CLKComplicationTimelineEntry]()
+            
+            for i in 1 ... limit {
+                let t = self.getTemplateForComplication(complication, bill: Double(i))
+                
+                let entry = CLKComplicationTimelineEntry(date: NSDate(timeIntervalSinceNow: -60.0*Double(i)), complicationTemplate: t)
+                array.append(entry)
+            }
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                handler(array)
+            }
         }
-        
-        handler(array)
     }
     
     func getTimelineEntriesForComplication(complication: CLKComplication, afterDate date: NSDate, limit: Int, withHandler handler: (([CLKComplicationTimelineEntry]?) -> Void)) {
         // Call the handler with the timeline entries after to the given date
-        log.debug("getTimelineEntriesForComplication afterDate")
-        var array = [CLKComplicationTimelineEntry]()
+        log.debug("\(date) \(limit)")
         
-        for i in 1 ... limit {
-            let t = getTemplateForComplication(complication, bill: Double(i))
+        dispatch_async(dispatch_get_global_queue(QOS_CLASS_UTILITY, 0)) {
+            var array = [CLKComplicationTimelineEntry]()
             
-            let entry = CLKComplicationTimelineEntry(date: NSDate(timeIntervalSinceNow: 60.0*Double(i)), complicationTemplate: t)
-            array.append(entry)
+            for i in 1 ... limit {
+                let t = self.getTemplateForComplication(complication, bill: Double(i))
+                
+                let entry = CLKComplicationTimelineEntry(date: NSDate(timeIntervalSinceNow: 60.0*Double(i)), complicationTemplate: t)
+                array.append(entry)
+            }
+            
+            handler(array)
         }
-        
-        handler(array)
     }
     
     // MARK: - Update Scheduling
     
     func getNextRequestedUpdateDateWithHandler(handler: (NSDate?) -> Void) {
         // Call the handler with the date when you would next like to be given the opportunity to update your complication content
-        log.debug("getNextRequestedUpdateDateWithHandler")
+        log.debug("")
 //        handler(nil)
-        handler(NSDate(timeIntervalSinceNow: 6*60))
+        handler(NSDate(timeIntervalSinceNow: 60*60))
     }
     
     // MARK: - Placeholder Templates
     
     func getPlaceholderTemplateForComplication(complication: CLKComplication, withHandler handler: (CLKComplicationTemplate?) -> Void) {
         // This method will be called once per supported complication, and the results will be cached
-        log.debug("getPlaceholderTemplateForComplication")
+        log.debug("")
         
         let template: CLKComplicationTemplate? = getTemplateForComplication(complication, bill: 10)
         handler(template)
@@ -121,7 +128,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 
     func getTemplateForComplication(complication: CLKComplication, bill: Double) -> CLKComplicationTemplate {
         // This method will be called once per supported complication, and the results will be cached
-        log.debug("getTemplateForComplication \(bill)")
+        log.debug("\(bill)")
         
         let template: CLKComplicationTemplate
         

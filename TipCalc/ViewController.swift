@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import WatchConnectivity
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, WCSessionDelegate {
 
     let model = TipCalculatorModel(bill: 10, tipPct: 0.15)
     
@@ -31,12 +32,24 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        updateUI(self)
 //        bill.becomeFirstResponder()
         
         model.modelChanged = { sender in
             print("modelChanged")
         }
+        
+        if #available(iOS 9.0, *) {
+            WCSession.defaultSession().delegate = self
+            WCSession.defaultSession().activateSession()
+            
+            let ctx = WCSession.defaultSession().applicationContext
+            
+            let p = ctx["percent"]
+            model.tipPct = p as? Double ?? 0.15
+        } else {
+            // Fallback on earlier versions
+        }
+        updateUI(self)
     }
     
     override func didReceiveMemoryWarning() {
@@ -160,6 +173,30 @@ class ViewController: UIViewController {
         
 //        splitLabel.text = "Split \(model.split)"
         updateIf(sender, textField: split, text: String(model.split))
+        
+//        if #available(iOS 9.0, *) {
+//            if (WCSession.isSupported()) {
+//                do {
+//                    let s = WCSession.defaultSession()
+//                    s.delegate = self
+//                    
+//                    s.activateSession()
+//                    let dict = ["bill":model.bill,
+//                        "percent":model.tipPct,
+//                        "split":model.split]
+//                    
+//                    try s.updateApplicationContext(dict)
+//                } catch let error as NSError {
+//                    print(error.localizedDescription)
+//                } catch {
+//                    print("error \(error)")
+//                }
+//
+//            }
+//        } else {
+//            // Fallback on earlier versions
+//        }
+
     }
     
     func formatAsCurrency(number: NSNumber) -> String {
@@ -171,5 +208,31 @@ class ViewController: UIViewController {
             textField.text = text
         }
     }
+    
+    // MARK: - WCSessionDelegate
+    @available(iOS 9.0, *)
+    func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
+//        log.debug("\(applicationContext)")
+        
+        updateFrom(applicationContext)
+        
+    }
+
+    func updateFrom(ctx: [String : AnyObject]) {
+        if let percent = ctx["percent"] as? Double {
+            model.tipPct = percent
+        }
+        
+        if let split = ctx["split"] as? Double {
+            model.split = split
+        }
+        
+        if let bill = ctx["bill"] as? Double {
+            model.bill = bill
+        }
+        
+        updateUI(self)
+    }
+
 }
 
