@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9019"/>
     </dependencies>
     <scenes>
@@ -47,9 +47,9 @@
                                 </slider>
                             </items>
                         </group>
-                        <separator alignment="left" id="nhv-ct-AOv"/>
+                        <separator alignment="left" hidden="YES" id="nhv-ct-AOv"/>
                         <switch width="1" alignment="left" hidden="YES" value="YES" title="Round Up" id="aJv-zb-ORq"/>
-                        <button width="1" alignment="left" title="About" id="vSX-tN-gVk">
+                        <button width="1" alignment="left" hidden="YES" title="About" id="vSX-tN-gVk">
                             <connections>
                                 <segue destination="9QX-RV-pjK" kind="push" id="98N-Eb-Ljv"/>
                             </connections>
@@ -96,28 +96,9 @@
                         <timer alignment="left" id="qnu-vC-ZOO"/>
                         <imageView alignment="left" id="Nee-0N-BXj"/>
                     </items>
-                    <menu key="menu" id="jKk-hn-AuZ">
-                        <items>
-                            <menuItem title="Menu Item" id="Jf8-cg-rli"/>
-                            <menuItem title="Menu Item" id="dKj-CR-7Vf"/>
-                        </items>
-                    </menu>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="464" y="281"/>
-        </scene>
-        <!--Glance Interface Controller-->
-        <scene sceneID="BOz-TT-tkC">
-            <objects>
-                <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController" customModule="TipCalc_WatchKit_App" customModuleProvider="target">
-                    <items>
-                        <group alignment="left" id="t8f-Gd-c4y"/>
-                        <group alignment="left" id="uCw-4Q-Ouw"/>
-                    </items>
-                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
-                </glanceController>
-            </objects>
-            <point key="canvasLocation" x="235" y="672"/>
+            <point key="canvasLocation" x="474" y="331"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
