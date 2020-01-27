@@ -13,7 +13,7 @@ class TipCalculatorModel: NSObject {
 //        
 //    }
 
-    var modelChanged: (sender: AnyObject) ->() = {(sender: AnyObject) in
+    var modelChanged: (_ sender: AnyObject) ->() = {(sender: AnyObject) in
         // noop
     }
     
@@ -21,7 +21,7 @@ class TipCalculatorModel: NSObject {
         didSet {
             print("set \(oldValue)")
             
-            modelChanged(sender: self)
+            modelChanged(self)
         }
     }
     var tipPct: Double = 0.15
@@ -33,7 +33,7 @@ class TipCalculatorModel: NSObject {
         set(tip) {
             print("tip \(tip)")
             
-            modelChanged(sender: self)
+            modelChanged(self)
             
             tipPct = tip / bill
         }
@@ -74,7 +74,7 @@ class TipCalculatorModel: NSObject {
     //        var retval = [Int: Double]()
     //        for possibleTip in possibleTipsInferred {
     //            let intPct = Int(possibleTip*100)
-    ////            retval[intPct] = calcTipWithTipPct(possibleTip)
+    //            retval[intPct] = calcTipWithTipPct(possibleTip)
     //        }
     //        return retval
     //
