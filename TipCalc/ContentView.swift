@@ -12,9 +12,13 @@ struct ContentView: View {
     @State var amount = ""
     @State var percent = 15
     @State var people = 2
+
+    @Environment(\.presentationMode) var presentationMode
     
     @Environment(\.managedObjectContext) var moc
-    @FetchRequest(entity: Meal.entity(), sortDescriptors: []) var meals: FetchedResults<Meal>
+    @FetchRequest(entity: Meal.entity(), sortDescriptors: [NSSortDescriptor(key: "date", ascending: false)]) var meals: FetchedResults<Meal>
+    
+    let formatter = RelativeDateTimeFormatter()
     
     var total: Double {
         let amount = Double(self.amount) ?? 0
@@ -24,6 +28,17 @@ struct ContentView: View {
     
     var totalPerPerson: Double {
         return total / Double(people)
+    }
+    
+    fileprivate func save() {
+        let meal = Meal(context: self.moc)
+        meal.id = UUID()
+        meal.name = "\(self.amount)"
+        meal.bill = self.total
+        meal.tip = Double(self.percent)
+        meal.date = Date()
+        
+        try? self.moc.save()
     }
     
     var body: some View {
@@ -55,18 +70,12 @@ struct ContentView: View {
                 
                 Section {
                     Button("Save") {
-                        let meal = Meal(context: self.moc)
-                        meal.id = UUID()
-                        meal.name = "\(self.amount)"
-                        meal.bill = self.total
-                        meal.tip = Double(self.percent)
-                        
-                        try? self.moc.save()
+                        self.save()
                     }
 
                     ForEach(meals, id: \.id) { meal in
                         HStack {
-                            Text("$\(meal.bill, specifier: "%.2f")")
+                            Text("$\(meal.bill, specifier: "%.2f") \(self.formatter.localizedString(for: meal.date ?? Date(), relativeTo: Date()))")
                             Spacer()
                             Text("\(meal.tip, specifier: "%.1f")%")
                         }
@@ -86,7 +95,17 @@ struct ContentView: View {
 //
 //
                 }
-            }.navigationBarTitle("TipCalculator")
+            }
+                .navigationBarTitle("TipCalculator")
+                .navigationBarItems(leading:
+                    Button(action: { self.amount = "" }) {
+                        Image(systemName: "plus")
+                    }
+                )
+                .navigationBarItems(trailing:
+                    Button(action: save) {
+                        Image(systemName: "plus")
+                    })
         }
     }
 }
