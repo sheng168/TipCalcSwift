@@ -7,14 +7,15 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct ContentView: View {
     @State var amount = ""
     @State var percent = 15
     @State var people = 2
 
-    @Environment(\.presentationMode) var presentationMode
-    
+//    @Environment(\.presentationMode) var presentationMode
+//
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(entity: Meal.entity(), sortDescriptors: [NSSortDescriptor(key: "date", ascending: false)]) var meals: FetchedResults<Meal>
     
@@ -37,7 +38,7 @@ struct ContentView: View {
         meal.bill = self.total
         meal.tip = Double(self.percent)
         meal.date = Date()
-        
+
         try? self.moc.save()
     }
     
@@ -70,7 +71,7 @@ struct ContentView: View {
                 
                 Section {
                     Button("Save") {
-                        self.save()
+//                        self.save()
                     }
 
                     ForEach(meals, id: \.id) { meal in
@@ -100,9 +101,7 @@ struct ContentView: View {
                 .navigationBarItems(leading:
                     Button(action: { self.amount = "" }) {
                         Image(systemName: "plus")
-                    }
-                )
-                .navigationBarItems(trailing:
+                    }, trailing:
                     Button(action: save) {
                         Image(systemName: "plus")
                     })
@@ -111,7 +110,10 @@ struct ContentView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
+    static let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
     static var previews: some View {
         ContentView()
+            .environment(\.managedObjectContext, context)
     }
 }
