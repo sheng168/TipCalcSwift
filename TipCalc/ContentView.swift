@@ -10,7 +10,7 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    @State var amount = ""
+    @State var amount = "25"
     @State var percent = 15
     @State var people = 2
 
@@ -66,12 +66,14 @@ struct ContentView: View {
                 Section(header: Text("Per person amount")) {
                     Stepper("Split by \(people) people", value: $people, in: 1...100)
                     
-                    Text("$\(totalPerPerson, specifier: "%.2f")")
+                    if self.people > 1 {
+                        Text("$\(totalPerPerson, specifier: "%.2f")")
+                    }
                 }
                 
                 Section {
                     Button("Save") {
-//                        self.save()
+                        self.save()
                     }
 
                     ForEach(meals, id: \.id) { meal in
@@ -81,6 +83,16 @@ struct ContentView: View {
                             Text("\(meal.tip, specifier: "%.1f")%")
                         }
                     }
+                    .onDelete { (indexSet) in
+                        print("delete")
+                        indexSet.map { (index) in
+                            self.meals[index]
+                        }.forEach { (meal) in
+                            self.moc.delete(meal)
+                        }
+                        try? self.moc.save()
+                    }
+                    
 //                    ForEach(0 ..< 2) { item in
 //                        Text("Hello, World!")
 //                    }
@@ -99,10 +111,11 @@ struct ContentView: View {
             }
                 .navigationBarTitle("TipCalculator")
                 .navigationBarItems(leading:
-                    Button(action: { self.amount = "" }) {
-                        Image(systemName: "plus")
-                    }, trailing:
-                    Button(action: save) {
+                    EditButton(),
+//                    Button(action: { self.amount = "" }) {
+//                        Image(systemName: "plus")
+//                    },
+                    trailing: Button(action: save) {
                         Image(systemName: "plus")
                     })
         }
