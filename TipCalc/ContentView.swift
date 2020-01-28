@@ -8,11 +8,18 @@
 
 import SwiftUI
 import CoreData
+import KeyboardObserving
 
 struct ContentView: View {
     @State var amount = "25"
     @State var percent = 15
-    @State var people = 2
+    @State var split = 2
+    
+    var disableClear: Bool {
+        get {
+            amount == ""
+        }
+    }
 
 //    @Environment(\.presentationMode) var presentationMode
 //
@@ -28,7 +35,7 @@ struct ContentView: View {
     }
     
     var totalPerPerson: Double {
-        return total / Double(people)
+        return total / Double(split)
     }
     
     fileprivate func save() {
@@ -38,6 +45,7 @@ struct ContentView: View {
         meal.bill = self.total
         meal.tip = Double(self.percent)
         meal.date = Date()
+        meal.split = Int16(self.split)
 
         try? self.moc.save()
     }
@@ -46,27 +54,30 @@ struct ContentView: View {
         NavigationView {
             Form {
                 Section {
-                    TextField("Amount", text: self.$amount) {
-                        // Called when the user tap the return button
-                        // see `onCommit` on TextField initializer.
-                        UIApplication.shared.endEditing()
-                    }.keyboardType(.decimalPad)
+                    HStack {
+                        TextField("Amount", text: self.$amount) {
+                            // Called when the user tap the return button
+                            // see `onCommit` on TextField initializer.
+                            UIApplication.shared.endEditing()
+                        }.keyboardType(.numbersAndPunctuation)
+                            .disableAutocorrection(true)
+                        
+                        Button("Clear") {
+                            self.amount = ""
+                        }.disabled(disableClear)
+                    }
                 }
                 
                 Section(header: Text("Tip percent")) {
-                    Picker("Percent", selection: $percent) {
-                        ForEach(0 ..< 20) {
-                            Text("\($0 )%")
-                        }
-                    }//.pickerStyle(SegmentedPickerStyle())
+                    Stepper("\(percent)%", value: $percent, in: 0...100)
 
                     Text("$\(total, specifier: "%.2f")")
                 }
                 
                 Section(header: Text("Per person amount")) {
-                    Stepper("Split by \(people) people", value: $people, in: 1...100)
+                    Stepper("Split by \(split) people", value: $split, in: 1...100)
                     
-                    if self.people > 1 {
+                    if self.split > 1 {
                         Text("$\(totalPerPerson, specifier: "%.2f")")
                     }
                 }
@@ -78,7 +89,7 @@ struct ContentView: View {
 
                     ForEach(meals, id: \.id) { meal in
                         HStack {
-                            Text("$\(meal.bill, specifier: "%.2f") \(self.formatter.localizedString(for: meal.date ?? Date(), relativeTo: Date()))")
+                            Text("$\(meal.bill, specifier: "%.2f") \(self.formatter.localizedString(for: meal.date ?? Date(), relativeTo: Date(timeIntervalSinceNow: 1.1)))")
                             Spacer()
                             Text("\(meal.tip, specifier: "%.1f")%")
                         }
@@ -119,6 +130,7 @@ struct ContentView: View {
                         Image(systemName: "plus")
                     })
         }
+        .keyboardObserving()
     }
 }
 

@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A09E7DE23E056D000CE57E0 /* KeyboardObserving in Frameworks */ = {isa = PBXBuildFile; productRef = 1A09E7DD23E056D000CE57E0 /* KeyboardObserving */; };
 		1A0F71E323DDCD1F00B0726D /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0F71E223DDCD1F00B0726D /* CloudKit.framework */; };
 		1A0F71E523DDE8A800B0726D /* TipCalculatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0F71E423DDE8A800B0726D /* TipCalculatorModel.swift */; };
 		1AA3D35923DDC20300F07452 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA3D35823DDC20300F07452 /* AppDelegate.swift */; };
@@ -64,6 +65,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A0F71E323DDCD1F00B0726D /* CloudKit.framework in Frameworks */,
+				1A09E7DE23E056D000CE57E0 /* KeyboardObserving in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,6 +174,9 @@
 			dependencies = (
 			);
 			name = TipCalc;
+			packageProductDependencies = (
+				1A09E7DD23E056D000CE57E0 /* KeyboardObserving */,
+			);
 			productName = TipCalc;
 			productReference = 1AA3D35523DDC20300F07452 /* TipCalc.app */;
 			productType = "com.apple.product-type.application";
@@ -244,6 +249,9 @@
 				Base,
 			);
 			mainGroup = 1AA3D34C23DDC20300F07452;
+			packageReferences = (
+				1A09E7DC23E056D000CE57E0 /* XCRemoteSwiftPackageReference "KeyboardObserving" */,
+			);
 			productRefGroup = 1AA3D35623DDC20300F07452 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -622,6 +630,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1A09E7DC23E056D000CE57E0 /* XCRemoteSwiftPackageReference "KeyboardObserving" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nickffox/KeyboardObserving";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1A09E7DD23E056D000CE57E0 /* KeyboardObserving */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1A09E7DC23E056D000CE57E0 /* XCRemoteSwiftPackageReference "KeyboardObserving" */;
+			productName = KeyboardObserving;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		1AA3D35C23DDC20400F07452 /* TipCalc.xcdatamodeld */ = {
