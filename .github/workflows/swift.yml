@@ -1,0 +1,27 @@
+name: Swift
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: macOS-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Checkout submodules
+      shell: bash
+      run: |
+        git submodule sync --recursive
+    - name: Version
+      run: sw_vers
+      
+    - name: Testing....
+      run: ls /Applications | grep Xcode
+    - name: Force xcode 11
+      run: sudo xcode-select -switch /Applications/Xcode_11.3.app
+
+    - name: Xcode
+      run: xcodebuild -version
+    - name: Start xcodebuild test
+      run: xcodebuild clean test -project TipCalc.xcodeproj -scheme TipCalc -destination "platform=iOS Simulator,name=iPhone 11 Pro"

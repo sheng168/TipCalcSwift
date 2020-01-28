@@ -1,6 +1,0 @@
-framework module Pods_TipCalc_WatchKit_Extension {
-  umbrella header "Pods-TipCalc WatchKit Extension-umbrella.h"
-
-  export *
-  module * { export * }
-}

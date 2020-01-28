@@ -1,6 +1,0 @@
-framework module XCGLogger {
-  umbrella header "Pods-TipCalc-XCGLogger-umbrella.h"
-
-  export *
-  module * { export * }
-}
