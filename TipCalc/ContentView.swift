@@ -92,6 +92,7 @@ struct ContentView: View {
                             Text("$\(meal.bill, specifier: "%.2f") \(self.formatter.localizedString(for: meal.date ?? Date(), relativeTo: Date(timeIntervalSinceNow: 1.1)))")
                             Spacer()
                             Text("\(meal.tip, specifier: "%.1f")%")
+                            Text("\(meal.split)")
                         }
                     }
                     .onDelete { (indexSet) in
