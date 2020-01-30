@@ -31,6 +31,9 @@ struct ContentView: View {
 //    }
 //    @State var percent = 15
 //    @State var split = 2
+//    @State var tax = false
+    
+    @State private var tipOption = 0
     
     var disableClear: Bool {
         get {
@@ -60,7 +63,7 @@ struct ContentView: View {
         meal.id = UUID()
         meal.name = "\(model.bill)"
         meal.bill = model.total
-        meal.tip = Double(model.tipPct)
+        meal.tip = model.tipPct * 100
         meal.date = Date()
         meal.split = Int16(model.split)
 
@@ -70,25 +73,49 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section {
+                Section(header: Text("Subtotal: \(model.subTotal, specifier: "%.2f") Tax: \(model.taxPct * 100, specifier: "%.2f")%")) {
                     HStack {
                         Text("$")
                         TextField("Amount", text: self.$model.billString) {
                             // Called when the user tap the return button
                             // see `onCommit` on TextField initializer.
                             UIApplication.shared.endEditing()
-                        }.keyboardType(.decimalPad)
+                        }
+                            .keyboardType(.decimalPad)
                             .disableAutocorrection(true)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
                         
-                        Button("Clear") {
-                            self.model.billString = "0"
-                        }.disabled(disableClear)
+                        Text("Tax Rate")
+                        TextField("Tax ", text: self.$model.taxPercentString) {
+                            // Called when the user tap the return button
+                            // see `onCommit` on TextField initializer.
+                            UIApplication.shared.endEditing()
+                        }
+                            .keyboardType(.decimalPad)
+                            .disableAutocorrection(true)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                        
+                        Text("%")
+
+//                        Toggle(isOn: $model.tipTax) {
+//                            Text("Tip on Tax")
+//                        }
+
+//                        Button("Clear") {
+//                            self.model.billString = "0"
+//                        }.disabled(disableClear)
                     }
                 }
                 
-                Section(header: Text("Tip percent")) {
-                    Stepper("\(model.percent)%", value: $model.percent, in: 0...100)
+                Section(header: Text("\(model.percent)% Tip percent")) {
+                    Stepper(value: $model.percent, in: 0...100) {
+                        Text("\(model.percent)%")
+                        Picker("Tip", selection: $model.tipTax) {
+                            Text("Pretax $\(model.tipSubtotal(), specifier: "%.2f")").tag(false)
+                            Text("Total $\(model.tipTotal(), specifier: "%.2f")").tag(true)
+                            }.pickerStyle(SegmentedPickerStyle())
 
+                    }
                     Text("$\(model.total, specifier: "%.2f")")
                 }
                 
@@ -100,7 +127,7 @@ struct ContentView: View {
                     }
                 }
                 
-                Section {
+                Section(header: Text("History")) {
                     Button("Save") {
                         self.save()
                     }

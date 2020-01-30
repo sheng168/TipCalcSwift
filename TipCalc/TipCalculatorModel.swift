@@ -6,7 +6,7 @@
 //  Copyright © 2015 Sheng Yu. All rights reserved.
 //
 
-import UIKit
+//import UIKit
 
 struct TipCalculatorModel {
 //    func noop(sender sender: AnyObject) {
@@ -17,7 +17,25 @@ struct TipCalculatorModel {
         // noop
     }
     
-    var taxPct = 0.9
+    var subTotal: Double {
+        get {
+            return bill / (1 + taxPct)
+        }
+        set(sub) {
+            print("subTotal \(sub)")
+            
+            modelChanged(self)
+            
+            bill = sub * (1 + taxPct)
+        }
+    }
+
+    var taxPercentString: String = "8.75" {
+        didSet {
+            taxPct = (Double(taxPercentString) ?? 0) / 100
+        }
+    }
+    var taxPct = 0.0875
     
     var billString: String = "20" {
         didSet {
@@ -32,6 +50,8 @@ struct TipCalculatorModel {
             modelChanged(self)
         }
     }
+    
+    var tipTax = false
     var tipPct: Double = 0.15
     
     var percent: Int {
@@ -43,9 +63,23 @@ struct TipCalculatorModel {
         }
     }
     
+    
+    
+    func tipSubtotal() -> Double {
+        return subTotal * tipPct
+    }
+    
+    func tipTotal() -> Double {
+        return bill * tipPct
+    }
+    
     var tip: Double {
         get {
-            return bill * tipPct
+            if tipTax {
+                return tipTotal()
+            } else {
+                return tipSubtotal()
+            }
         }
         set(tip) {
             print("tip \(tip)")
@@ -55,6 +89,7 @@ struct TipCalculatorModel {
             tipPct = tip / bill
         }
     }
+    
     var total: Double {
         get {
             return bill + tip
