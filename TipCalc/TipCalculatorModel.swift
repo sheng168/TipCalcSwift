@@ -8,23 +8,40 @@
 
 import UIKit
 
-class TipCalculatorModel: NSObject {
+struct TipCalculatorModel {
 //    func noop(sender sender: AnyObject) {
 //        
 //    }
 
-    var modelChanged: (_ sender: AnyObject) ->() = {(sender: AnyObject) in
+    var modelChanged: (_ sender: TipCalculatorModel) ->() = {(sender: TipCalculatorModel) in
         // noop
+    }
+    
+    var taxPct = 0.9
+    
+    var billString: String = "20" {
+        didSet {
+            bill = Double(billString) ?? 0
+        }
     }
     
     var bill: Double = 20 {
         didSet {
-            print("set \(oldValue)")
+            print("bill set \(bill)")
             
             modelChanged(self)
         }
     }
     var tipPct: Double = 0.15
+    
+    var percent: Int {
+        get {
+            Int(tipPct * 100)
+        }
+        set(p) {
+            tipPct = Double(p) / 100
+        }
+    }
     
     var tip: Double {
         get {
@@ -55,17 +72,17 @@ class TipCalculatorModel: NSObject {
         }
         set(new) {
             print(new)
-            total = new * split
+            total = new * Double(split)
         }
     }
     
-    init(bill: Double, tipPct: Double) {
+//    init(bill: Double, tipPct: Double) {
 //        super.init()
 //        self.bill = bill
 //        self.tipPct = tipPct
         
         //        super.description
-    }
+//    }
     
     //    func returnPossibleTips() -> [Int: Double] {
     //
@@ -80,7 +97,7 @@ class TipCalculatorModel: NSObject {
     //
     //    }
     
-    override var description: String {
+    var description: String {
         get {
             return "bill: \(bill) tipPct:\(tipPct) total:\(total)"
             //            return total * tipPct

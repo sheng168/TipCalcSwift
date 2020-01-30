@@ -10,14 +10,31 @@ import SwiftUI
 import CoreData
 import KeyboardObserving
 
+//extension TipCalculatorModel {
+//    var amountString: String {
+//        get {
+//            "\(bill)"
+//        }
+//        set(b) {
+//            bill = Double(b) ?? 0
+//        }
+//    }
+//}
+
 struct ContentView: View {
-    @State var amount = "25"
-    @State var percent = 15
-    @State var split = 2
+    @State var model = TipCalculatorModel()
+//    var amountString: String = "25" {
+//        didSet(b) {
+//            print(b)
+//            model.bill = Double(b) ?? 0
+//        }
+//    }
+//    @State var percent = 15
+//    @State var split = 2
     
     var disableClear: Bool {
         get {
-            amount == ""
+            model.bill == 0
         }
     }
 
@@ -28,24 +45,24 @@ struct ContentView: View {
     
     let formatter = RelativeDateTimeFormatter()
     
-    var total: Double {
-        let amount = Double(self.amount) ?? 0
-        
-        return amount * (1 + Double(percent) / 100)
-    }
+//    var total: Double {
+//        let amount = Double(self.amount) ?? 0
+//
+//        return amount * (1 + Double(percent) / 100)
+//    }
     
-    var totalPerPerson: Double {
-        return total / Double(split)
-    }
+//    var totalPerPerson: Double {
+//        return total / Double(split)
+//    }
     
     fileprivate func save() {
         let meal = Meal(context: self.moc)
         meal.id = UUID()
-        meal.name = "\(self.amount)"
-        meal.bill = self.total
-        meal.tip = Double(self.percent)
+        meal.name = "\(model.bill)"
+        meal.bill = model.total
+        meal.tip = Double(model.tipPct)
         meal.date = Date()
-        meal.split = Int16(self.split)
+        meal.split = Int16(model.split)
 
         try? self.moc.save()
     }
@@ -55,30 +72,31 @@ struct ContentView: View {
             Form {
                 Section {
                     HStack {
-                        TextField("Amount", text: self.$amount) {
+                        Text("$")
+                        TextField("Amount", text: self.$model.billString) {
                             // Called when the user tap the return button
                             // see `onCommit` on TextField initializer.
                             UIApplication.shared.endEditing()
-                        }.keyboardType(.numbersAndPunctuation)
+                        }.keyboardType(.decimalPad)
                             .disableAutocorrection(true)
                         
                         Button("Clear") {
-                            self.amount = ""
+                            self.model.billString = "0"
                         }.disabled(disableClear)
                     }
                 }
                 
                 Section(header: Text("Tip percent")) {
-                    Stepper("\(percent)%", value: $percent, in: 0...100)
+                    Stepper("\(model.percent)%", value: $model.percent, in: 0...100)
 
-                    Text("$\(total, specifier: "%.2f")")
+                    Text("$\(model.total, specifier: "%.2f")")
                 }
                 
                 Section(header: Text("Per person amount")) {
-                    Stepper("Split by \(split) people", value: $split, in: 1...100)
+                    Stepper("Split by \(Int(model.split)) people", value: $model.split, in: 1...100)
                     
-                    if self.split > 1 {
-                        Text("$\(totalPerPerson, specifier: "%.2f")")
+                    if self.model.split > 1 {
+                        Text("$\(model.each, specifier: "%.2f")")
                     }
                 }
                 
@@ -122,14 +140,14 @@ struct ContentView: View {
                 }
             }
                 .navigationBarTitle("TipCalculator")
-                .navigationBarItems(leading:
-                    EditButton(),
+//                .navigationBarItems(leading:
+//                    EditButton(),
 //                    Button(action: { self.amount = "" }) {
 //                        Image(systemName: "plus")
 //                    },
-                    trailing: Button(action: save) {
-                        Image(systemName: "plus")
-                    })
+//                    trailing: Button(action: save) {
+//                        Image(systemName: "plus")
+//                    })
         }
         .keyboardObserving()
     }
