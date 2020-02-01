@@ -34,7 +34,7 @@ struct ContentView: View {
     
     var disableClear: Bool {
         get {
-            model.bill == 0
+            model.checkTotal == 0
         }
     }
 
@@ -49,9 +49,9 @@ struct ContentView: View {
     fileprivate func save() {
         let meal = Meal(context: self.moc)
         meal.id = UUID()
-        meal.name = "\(model.bill)"
-        meal.bill = model.total
-        meal.tip = model.tipPct * 100
+        meal.name = "\(model.checkTotal)"
+        meal.bill = model.totalWithTip
+        meal.tip = model.tipPercent * 100
         meal.date = Date()
         meal.split = Int16(model.split)
 
@@ -79,7 +79,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("Subtotal: \(model.subTotal, specifier: "%.2f") Tax: \(model.taxPct * 100, specifier: "%.2f")%")) {
+                Section(header: Text("Subtotal: $\(model.subTotal, specifier: "%.2f") Tax: $\(model.tax, specifier: "%.2f")")) {
 
 //                    HStack {
 //                        DecimalField(label: "Amount", value: $model.billDecimal, formatter: dollarValue)
@@ -101,16 +101,6 @@ struct ContentView: View {
 //                            .textFieldStyle(RoundedBorderTextFieldStyle())
 //
 //                        Text("Tax Rate")
-//                        TextField("Tax ", text: self.$model.taxPercentString) {
-//                            // Called when the user tap the return button
-//                            // see `onCommit` on TextField initializer.
-//                            UIApplication.shared.endEditing()
-//                        }
-//                            .keyboardType(.decimalPad)
-//                            .disableAutocorrection(true)
-//                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                        
-//                        Text("%")
 
 //                        Toggle(isOn: $model.tipTax) {
 //                            Text("Tip on Tax")
@@ -122,23 +112,45 @@ struct ContentView: View {
                     }
                 }
                 
-                Section(header: Text("\(model.percent)% Tip percent")) {
+                Section(header: Text("Tip percent and amount")) {
                     Stepper(value: $model.percent, in: 0...100) {
                         Text("\(model.percent)%")
-                        Picker("Tip", selection: $model.tipTax) {
-                            Text("Pretax $\(model.tipSubtotal(), specifier: "%.2f")").tag(false)
-                            Text("Total $\(model.tipTotal(), specifier: "%.2f")").tag(true)
-                            }.pickerStyle(SegmentedPickerStyle())
-
+                        
                     }
-                    Text("$\(model.total, specifier: "%.2f")")
+                    
+                    if model.taxPercent == 0.0 {
+                        Text("$\(model.tipTotal(), specifier: "%.2f")")
+                    } else {
+                        Picker("Tip", selection: $model.tipTax) {
+                            Text("PreTax $\(model.tipSubtotal(), specifier: "%.2f")").tag(false)
+                            Text("PostTax $\(model.tipTotal(), specifier: "%.2f")").tag(true)
+                            }.pickerStyle(SegmentedPickerStyle())
+                    }
+
+                    Stepper(onIncrement: {
+                        self.model.totalWithTip.round(.down)
+                        self.model.totalWithTip += 1
+                    }, onDecrement: {
+                        self.model.totalWithTip.round(.up)
+                        self.model.totalWithTip -= 1
+                    }) {
+                        Text("$\(model.totalWithTip, specifier: "%.2f")")
+                    }
                 }
                 
                 Section(header: Text("Per person amount")) {
                     Stepper("Split by \(Int(model.split)) people", value: $model.split, in: 1...100)
                     
                     if self.model.split > 1 {
-                        Text("$\(model.each, specifier: "%.2f")")
+                        Stepper(onIncrement: {
+                            self.model.each.round(.down)
+                            self.model.each += 1
+                        }, onDecrement: {
+                            self.model.each.round(.up)
+                            self.model.each -= 1
+                        }) {
+                            Text("$\(model.each, specifier: "%.2f")")
+                        }
                     }
                 }
                 

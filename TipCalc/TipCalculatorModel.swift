@@ -8,10 +8,45 @@
 
 import Foundation
 
+extension TipCalculatorModel {
+    var taxPctDecimal: Decimal? {
+        get {
+            return Decimal(taxPercent)
+        }
+        set(sub) {
+            if let sub = sub {
+                taxPercent = Double(truncating: sub as NSNumber)
+            } else {
+                log.info("err")
+                taxPercent = 0
+            }
+        }
+    }
+
+    var billDecimal: Decimal? {
+        get {
+            return Decimal(checkTotal)
+        }
+        set(sub) {
+            if let sub = sub {
+                checkTotal = Double(truncating: sub as NSNumber)
+            } else {
+                checkTotal = 0
+            }
+        }
+    }
+    
+    var percent: Int {
+        get {
+            Int(tipPercent * 100)
+        }
+        set(p) {
+            tipPercent = Double(p) / 100
+        }
+    }
+}
+
 struct TipCalculatorModel {
-//    func noop(sender sender: AnyObject) {
-//        
-//    }
 
     var modelChanged: (_ sender: TipCalculatorModel) ->() = {(sender: TipCalculatorModel) in
         // noop
@@ -19,85 +54,42 @@ struct TipCalculatorModel {
     
     var subTotal: Double {
         get {
-            return bill / (1 + taxPct)
+            return checkTotal / (1 + taxPercent)
         }
-        set(sub) {
-            log.info("subTotal \(sub)")
-            
-            modelChanged(self)
-            
-            bill = sub * (1 + taxPct)
-        }
+//        set(sub) {
+//            log.info("subTotal \(sub)")
+//
+//            modelChanged(self)
+//
+//            checkTotal = sub * (1 + taxPct)
+//        }
     }
 
-//    var taxPercentString: String = "8.75" {
-//        didSet {
-//            taxPct = (Double(taxPercentString) ?? 0) / 100
-//        }
-//    }
-    var taxPct = 0.0875
-    var taxPctDecimal: Decimal? {
+    var tax: Double {
         get {
-            return Decimal(taxPct)
-        }
-        set(sub) {
-            if let sub = sub {
-                taxPct = Double(truncating: sub as NSNumber)
-            } else {
-                log.info("err")
-                taxPct = 0
-            }
+            subTotal * taxPercent
         }
     }
+    var taxPercent = 0.0875
 
     
-//    var billString: String = "20" {
-//        didSet {
-//            bill = Double(billString) ?? 0
-//        }
-//    }
-    
-    var bill: Double = 20 {
+    var checkTotal: Double = 20 {
         didSet {
-            log.info("bill set \(bill)")
+            log.info("bill set \(checkTotal)")
             
             modelChanged(self)
         }
     }
-    var billDecimal: Decimal? {
-        get {
-            return Decimal(bill)
-        }
-        set(sub) {
-            if let sub = sub {
-                bill = Double(truncating: sub as NSNumber)
-            } else {
-                bill = 0
-            }
-        }
-    }
-
     
     var tipTax = false
-    var tipPct: Double = 0.15
-    
-    var percent: Int {
-        get {
-            Int(tipPct * 100)
-        }
-        set(p) {
-            tipPct = Double(p) / 100
-        }
-    }
-    
-    
+    var tipPercent: Double = 0.15
     
     func tipSubtotal() -> Double {
-        return subTotal * tipPct
+        return subTotal * tipPercent
     }
     
     func tipTotal() -> Double {
-        return bill * tipPct
+        return checkTotal * tipPercent
     }
     
     var tip: Double {
@@ -113,55 +105,38 @@ struct TipCalculatorModel {
             
             modelChanged(self)
             
-            tipPct = tip / bill
+            if tipTax {
+                tipPercent = tip / checkTotal
+            } else {
+                tipPercent = tip / subTotal
+            }
         }
     }
     
-    var total: Double {
+    var totalWithTip: Double {
         get {
-            return bill + tip
+            return checkTotal + tip
         }
         set(new) {
             log.info("\(new)")
-            tip = new - bill
+            tip = new - checkTotal
         }
     }
-    var split = 2.0
     
+    var split = 2.0
     var each: Double {
         get {
-            return total / Double(split)
+            return totalWithTip / Double(split)
         }
         set(new) {
             log.info("\(new)")
-            total = new * Double(split)
+            totalWithTip = new * Double(split)
         }
     }
-    
-//    init(bill: Double, tipPct: Double) {
-//        super.init()
-//        self.bill = bill
-//        self.tipPct = tipPct
-        
-        //        super.description
-//    }
-    
-    //    func returnPossibleTips() -> [Int: Double] {
-    //
-    //        let possibleTipsInferred = [0.15, 0.18, 0.20]
-    //
-    //        var retval = [Int: Double]()
-    //        for possibleTip in possibleTipsInferred {
-    //            let intPct = Int(possibleTip*100)
-    //            retval[intPct] = calcTipWithTipPct(possibleTip)
-    //        }
-    //        return retval
-    //
-    //    }
     
     var description: String {
         get {
-            return "bill: \(bill) tipPct:\(tipPct) total:\(total)"
+            return "bill: \(checkTotal) tipPct:\(tipPercent) total:\(totalWithTip)"
             //            return total * tipPct
         }
         
