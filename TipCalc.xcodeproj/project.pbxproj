@@ -10,6 +10,8 @@
 		1A09E7DE23E056D000CE57E0 /* KeyboardObserving in Frameworks */ = {isa = PBXBuildFile; productRef = 1A09E7DD23E056D000CE57E0 /* KeyboardObserving */; };
 		1A0F71E323DDCD1F00B0726D /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0F71E223DDCD1F00B0726D /* CloudKit.framework */; };
 		1A0F71E523DDE8A800B0726D /* TipCalculatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0F71E423DDE8A800B0726D /* TipCalculatorModel.swift */; };
+		1A783AAC23E3219200D8D786 /* DecimalField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A783AAB23E3219200D8D786 /* DecimalField.swift */; };
+		1A783AAF23E4DA3B00D8D786 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 1A783AAE23E4DA3B00D8D786 /* Logging */; };
 		1AA3D35923DDC20300F07452 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA3D35823DDC20300F07452 /* AppDelegate.swift */; };
 		1AA3D35B23DDC20300F07452 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA3D35A23DDC20300F07452 /* SceneDelegate.swift */; };
 		1AA3D35E23DDC20400F07452 /* TipCalc.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1AA3D35C23DDC20400F07452 /* TipCalc.xcdatamodeld */; };
@@ -41,6 +43,7 @@
 /* Begin PBXFileReference section */
 		1A0F71E223DDCD1F00B0726D /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		1A0F71E423DDE8A800B0726D /* TipCalculatorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipCalculatorModel.swift; sourceTree = "<group>"; };
+		1A783AAB23E3219200D8D786 /* DecimalField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalField.swift; sourceTree = "<group>"; };
 		1AA3D35523DDC20300F07452 /* TipCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AA3D35823DDC20300F07452 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1AA3D35A23DDC20300F07452 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A783AAF23E4DA3B00D8D786 /* Logging in Frameworks */,
 				1A0F71E323DDCD1F00B0726D /* CloudKit.framework in Frameworks */,
 				1A09E7DE23E056D000CE57E0 /* KeyboardObserving in Frameworks */,
 			);
@@ -123,6 +127,7 @@
 				1AA3D35A23DDC20300F07452 /* SceneDelegate.swift */,
 				1A0F71E423DDE8A800B0726D /* TipCalculatorModel.swift */,
 				1AA3D35F23DDC20400F07452 /* ContentView.swift */,
+				1A783AAB23E3219200D8D786 /* DecimalField.swift */,
 				1AA3D36123DDC20800F07452 /* Assets.xcassets */,
 				1AA3D36623DDC20800F07452 /* LaunchScreen.storyboard */,
 				1AA3D36923DDC20800F07452 /* Info.plist */,
@@ -176,6 +181,7 @@
 			name = TipCalc;
 			packageProductDependencies = (
 				1A09E7DD23E056D000CE57E0 /* KeyboardObserving */,
+				1A783AAE23E4DA3B00D8D786 /* Logging */,
 			);
 			productName = TipCalc;
 			productReference = 1AA3D35523DDC20300F07452 /* TipCalc.app */;
@@ -251,6 +257,7 @@
 			mainGroup = 1AA3D34C23DDC20300F07452;
 			packageReferences = (
 				1A09E7DC23E056D000CE57E0 /* XCRemoteSwiftPackageReference "KeyboardObserving" */,
+				1A783AAD23E4DA3B00D8D786 /* XCRemoteSwiftPackageReference "swift-log" */,
 			);
 			productRefGroup = 1AA3D35623DDC20300F07452 /* Products */;
 			projectDirPath = "";
@@ -297,6 +304,7 @@
 			files = (
 				1AA3D35E23DDC20400F07452 /* TipCalc.xcdatamodeld in Sources */,
 				1AA3D35923DDC20300F07452 /* AppDelegate.swift in Sources */,
+				1A783AAC23E3219200D8D786 /* DecimalField.swift in Sources */,
 				1AA3D36023DDC20400F07452 /* ContentView.swift in Sources */,
 				1A0F71E523DDE8A800B0726D /* TipCalculatorModel.swift in Sources */,
 				1AA3D35B23DDC20300F07452 /* SceneDelegate.swift in Sources */,
@@ -466,7 +474,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = TipCalc/TipCalc.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"TipCalc/Preview Content\"";
 				DEVELOPMENT_TEAM = 6GW2SW5L9X;
 				ENABLE_PREVIEWS = YES;
@@ -475,7 +483,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = us.jsy.TipCalc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -489,7 +497,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = TipCalc/TipCalc.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"TipCalc/Preview Content\"";
 				DEVELOPMENT_TEAM = 6GW2SW5L9X;
 				ENABLE_PREVIEWS = YES;
@@ -498,7 +506,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = us.jsy.TipCalc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -640,6 +648,14 @@
 				minimumVersion = 0.2.1;
 			};
 		};
+		1A783AAD23E4DA3B00D8D786 /* XCRemoteSwiftPackageReference "swift-log" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-log.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -647,6 +663,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1A09E7DC23E056D000CE57E0 /* XCRemoteSwiftPackageReference "KeyboardObserving" */;
 			productName = KeyboardObserving;
+		};
+		1A783AAE23E4DA3B00D8D786 /* Logging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1A783AAD23E4DA3B00D8D786 /* XCRemoteSwiftPackageReference "swift-log" */;
+			productName = Logging;
 		};
 /* End XCSwiftPackageProductDependency section */
 

@@ -6,7 +6,7 @@
 //  Copyright © 2015 Sheng Yu. All rights reserved.
 //
 
-//import UIKit
+import Foundation
 
 struct TipCalculatorModel {
 //    func noop(sender sender: AnyObject) {
@@ -22,7 +22,7 @@ struct TipCalculatorModel {
             return bill / (1 + taxPct)
         }
         set(sub) {
-            print("subTotal \(sub)")
+            log.info("subTotal \(sub)")
             
             modelChanged(self)
             
@@ -30,26 +30,53 @@ struct TipCalculatorModel {
         }
     }
 
-    var taxPercentString: String = "8.75" {
-        didSet {
-            taxPct = (Double(taxPercentString) ?? 0) / 100
-        }
-    }
+//    var taxPercentString: String = "8.75" {
+//        didSet {
+//            taxPct = (Double(taxPercentString) ?? 0) / 100
+//        }
+//    }
     var taxPct = 0.0875
-    
-    var billString: String = "20" {
-        didSet {
-            bill = Double(billString) ?? 0
+    var taxPctDecimal: Decimal? {
+        get {
+            return Decimal(taxPct)
+        }
+        set(sub) {
+            if let sub = sub {
+                taxPct = Double(truncating: sub as NSNumber)
+            } else {
+                log.info("err")
+                taxPct = 0
+            }
         }
     }
+
+    
+//    var billString: String = "20" {
+//        didSet {
+//            bill = Double(billString) ?? 0
+//        }
+//    }
     
     var bill: Double = 20 {
         didSet {
-            print("bill set \(bill)")
+            log.info("bill set \(bill)")
             
             modelChanged(self)
         }
     }
+    var billDecimal: Decimal? {
+        get {
+            return Decimal(bill)
+        }
+        set(sub) {
+            if let sub = sub {
+                bill = Double(truncating: sub as NSNumber)
+            } else {
+                bill = 0
+            }
+        }
+    }
+
     
     var tipTax = false
     var tipPct: Double = 0.15
@@ -82,7 +109,7 @@ struct TipCalculatorModel {
             }
         }
         set(tip) {
-            print("tip \(tip)")
+            log.info("tip \(tip)")
             
             modelChanged(self)
             
@@ -95,7 +122,7 @@ struct TipCalculatorModel {
             return bill + tip
         }
         set(new) {
-            print(new)
+            log.info("\(new)")
             tip = new - bill
         }
     }
@@ -106,7 +133,7 @@ struct TipCalculatorModel {
             return total / Double(split)
         }
         set(new) {
-            print(new)
+            log.info("\(new)")
             total = new * Double(split)
         }
     }

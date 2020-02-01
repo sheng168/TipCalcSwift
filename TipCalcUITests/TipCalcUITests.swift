@@ -27,6 +27,7 @@ class TipCalcUITests: XCTestCase {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
+        XCUIApplication().tables.cells.otherElements.containing(.staticText, identifier:"$").children(matching: .textField).matching(identifier: "Amount").element(boundBy: 0).tap()
         
         takeScreenshot(name: "main_screen")
 

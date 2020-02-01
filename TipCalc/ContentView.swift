@@ -23,17 +23,14 @@ import KeyboardObserving
 
 struct ContentView: View {
     @State var model = TipCalculatorModel()
-//    var amountString: String = "25" {
-//        didSet(b) {
-//            print(b)
-//            model.bill = Double(b) ?? 0
-//        }
-//    }
-//    @State var percent = 15
-//    @State var split = 2
-//    @State var tax = false
-    
-    @State private var tipOption = 0
+
+    @State private var totalInput: Double? = 18.94
+
+    private var currencyFormatter: NumberFormatter = {
+        let f = NumberFormatter()
+        f.numberStyle = .currency
+        return f
+    }()
     
     var disableClear: Bool {
         get {
@@ -42,21 +39,12 @@ struct ContentView: View {
     }
 
 //    @Environment(\.presentationMode) var presentationMode
-//
-    @Environment(\.managedObjectContext) var moc
+    @Environment(\.managedObjectContext) var moc // where does the path come from?
+
     @FetchRequest(entity: Meal.entity(), sortDescriptors: [NSSortDescriptor(key: "date", ascending: false)]) var meals: FetchedResults<Meal>
     
     let formatter = RelativeDateTimeFormatter()
     
-//    var total: Double {
-//        let amount = Double(self.amount) ?? 0
-//
-//        return amount * (1 + Double(percent) / 100)
-//    }
-    
-//    var totalPerPerson: Double {
-//        return total / Double(split)
-//    }
     
     fileprivate func save() {
         let meal = Meal(context: self.moc)
@@ -70,32 +58,59 @@ struct ContentView: View {
         try? self.moc.save()
     }
     
+    static var currencyFormatter: NumberFormatter {
+        let nf = NumberFormatter()
+        nf.numberStyle = .currency
+        nf.isLenient = true
+        return nf
+    }
+    
+    static var percentFormatter: NumberFormatter {
+        let nf = NumberFormatter()
+        nf.maximumFractionDigits = 2
+        nf.numberStyle = .percent
+        nf.isLenient = true
+        return nf
+    }
+    
+    @State var dollarValue: Decimal?
+    @State var percentValue: Decimal?
+
     var body: some View {
         NavigationView {
             Form {
                 Section(header: Text("Subtotal: \(model.subTotal, specifier: "%.2f") Tax: \(model.taxPct * 100, specifier: "%.2f")%")) {
+
+//                    HStack {
+//                        DecimalField(label: "Amount", value: $model.billDecimal, formatter: dollarValue)
+//                        DecimalField(label: "Tax Rate", value: $model.taxPctDecimal, formatter: percentFormatter)
+//                    }
+
                     HStack {
-                        Text("$")
-                        TextField("Amount", text: self.$model.billString) {
-                            // Called when the user tap the return button
-                            // see `onCommit` on TextField initializer.
-                            UIApplication.shared.endEditing()
-                        }
-                            .keyboardType(.decimalPad)
-                            .disableAutocorrection(true)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                        DecimalField(label: "Amount", value: $model.billDecimal, formatter: ContentView.currencyFormatter)
+                        DecimalField(label: "Tax Rate", value: $model.taxPctDecimal, formatter: ContentView.percentFormatter)
+//                        Text("$")
                         
-                        Text("Tax Rate")
-                        TextField("Tax ", text: self.$model.taxPercentString) {
-                            // Called when the user tap the return button
-                            // see `onCommit` on TextField initializer.
-                            UIApplication.shared.endEditing()
-                        }
-                            .keyboardType(.decimalPad)
-                            .disableAutocorrection(true)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
+//                        TextField("Amount", text: self.$model.billString) {
+//                            // Called when the user tap the return button
+//                            // see `onCommit` on TextField initializer.
+//                            UIApplication.shared.endEditing()
+//                        }
+//                            .keyboardType(.decimalPad)
+//                            .disableAutocorrection(true)
+//                            .textFieldStyle(RoundedBorderTextFieldStyle())
+//
+//                        Text("Tax Rate")
+//                        TextField("Tax ", text: self.$model.taxPercentString) {
+//                            // Called when the user tap the return button
+//                            // see `onCommit` on TextField initializer.
+//                            UIApplication.shared.endEditing()
+//                        }
+//                            .keyboardType(.decimalPad)
+//                            .disableAutocorrection(true)
+//                            .textFieldStyle(RoundedBorderTextFieldStyle())
                         
-                        Text("%")
+//                        Text("%")
 
 //                        Toggle(isOn: $model.tipTax) {
 //                            Text("Tip on Tax")
@@ -128,8 +143,10 @@ struct ContentView: View {
                 }
                 
                 Section(header: Text("History")) {
-                    Button("Save") {
-                        self.save()
+                    if meals.count == 0 {
+                        Button("Save") {
+                            self.save()
+                        }
                     }
 
                     ForEach(meals, id: \.id) { meal in
@@ -141,7 +158,7 @@ struct ContentView: View {
                         }
                     }
                     .onDelete { (indexSet) in
-                        print("delete")
+                        log.info("delete")
                         indexSet.map { (index) in
                             self.meals[index]
                         }.forEach { (meal) in
@@ -149,32 +166,17 @@ struct ContentView: View {
                         }
                         try? self.moc.save()
                     }
-                    
-//                    ForEach(0 ..< 2) { item in
-//                        Text("Hello, World!")
-//                    }
-//
-//                    Button(action: {
-//                        self.people += 1
-//                    }) {
-//                        Text("Click \(people)")
-//                    }
-//
-//
-//
-//
-//
                 }
             }
                 .navigationBarTitle("TipCalculator")
-//                .navigationBarItems(leading:
-//                    EditButton(),
+                .navigationBarItems(leading:
+                    EditButton(),
 //                    Button(action: { self.amount = "" }) {
-//                        Image(systemName: "plus")
+//                        Image(systemName: "plus") // very hard to click on device
 //                    },
-//                    trailing: Button(action: save) {
-//                        Image(systemName: "plus")
-//                    })
+                    trailing: Button(action: save) {
+                        Text("Save")
+                    })
         }
         .keyboardObserving()
     }
