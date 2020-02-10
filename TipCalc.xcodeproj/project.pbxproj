@@ -21,6 +21,7 @@
 		1AA3D36823DDC20800F07452 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AA3D36623DDC20800F07452 /* LaunchScreen.storyboard */; };
 		1AA3D37323DDC20800F07452 /* TipCalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA3D37223DDC20800F07452 /* TipCalcTests.swift */; };
 		1AA3D37E23DDC20800F07452 /* TipCalcUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA3D37D23DDC20800F07452 /* TipCalcUITests.swift */; };
+		1AE0D7FC23EE24B900C0E200 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE0D7FB23EE24B800C0E200 /* LocationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		1AA3D37D23DDC20800F07452 /* TipCalcUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCalcUITests.swift; sourceTree = "<group>"; };
 		1AA3D37F23DDC20800F07452 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AA3D38B23DDCC5100F07452 /* TipCalc.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TipCalc.entitlements; sourceTree = "<group>"; };
+		1AE0D7FB23EE24B800C0E200 /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 			children = (
 				1AA3D38B23DDCC5100F07452 /* TipCalc.entitlements */,
 				1AA3D35823DDC20300F07452 /* AppDelegate.swift */,
+				1AE0D7FB23EE24B800C0E200 /* LocationView.swift */,
 				1AA3D35A23DDC20300F07452 /* SceneDelegate.swift */,
 				1A0F71E423DDE8A800B0726D /* TipCalculatorModel.swift */,
 				1AA3D35F23DDC20400F07452 /* ContentView.swift */,
@@ -306,6 +309,7 @@
 				1AA3D35923DDC20300F07452 /* AppDelegate.swift in Sources */,
 				1A783AAC23E3219200D8D786 /* DecimalField.swift in Sources */,
 				1AA3D36023DDC20400F07452 /* ContentView.swift in Sources */,
+				1AE0D7FC23EE24B900C0E200 /* LocationView.swift in Sources */,
 				1A0F71E523DDE8A800B0726D /* TipCalculatorModel.swift in Sources */,
 				1AA3D35B23DDC20300F07452 /* SceneDelegate.swift in Sources */,
 			);

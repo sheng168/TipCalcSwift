@@ -18,13 +18,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        
+        if let activity = session.stateRestorationActivity { // 2
+            log.info("\(activity)")
+//            appState.restore(from: activity) // 3
+        } else {
+            log.info("nil")
+        }
+        
+
 
         // Get the managed object context from the shared persistent container.
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
         // Create the SwiftUI view and set the context as the value for the managedObjectContext environment keyPath.
         // Add `@Environment(\.managedObjectContext)` in the views that will need the context.
-        let contentView = ContentView().environment(\.managedObjectContext, context)
+        let contentView = ContentView()
+            .environment(\.managedObjectContext, context) //.environmentObject(nil)
+            .environmentObject(LocationManager())
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
@@ -69,3 +80,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 }
 
+extension SceneDelegate { // state restoration
+    func stateRestorationActivity(for scene: UIScene) -> NSUserActivity? {
+        log.critical("stateRestorationActivity \(scene)")
+        let activity = NSUserActivity(activityType: "Bundle.main.activityType") // 1
+        activity.addUserInfoEntries(from: ["name" : "Jin"])
+//        appState.store(in: activity) // 2
+        return activity // 3
+    }
+    
+//    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+//        attachKeyWindow(to: scene) // 1
+//
+//        if let activity = session.stateRestorationActivity { // 2
+//            appState.restore(from: activity) // 3
+//        }
+//    }
+}

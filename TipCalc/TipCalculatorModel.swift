@@ -142,3 +142,100 @@ struct TipCalculatorModel {
         
     }
 }
+
+struct TipCalculatorModelDecimal {
+
+    var modelChanged: (_ sender: TipCalculatorModelDecimal) ->() = {(sender: TipCalculatorModelDecimal) in
+        // noop
+    }
+    
+    var subTotal: Decimal {
+        get {
+            return checkTotal / (1 + taxPercent)
+        }
+//        set(sub) {
+//            log.info("subTotal \(sub)")
+//
+//            modelChanged(self)
+//
+//            checkTotal = sub * (1 + taxPct)
+//        }
+    }
+
+    var tax: Decimal {
+        get {
+            subTotal * taxPercent
+        }
+    }
+    var taxPercent: Decimal = 0.0875
+
+    
+    var checkTotal: Decimal = 20 {
+        didSet {
+            log.info("bill set \(checkTotal)")
+            
+            modelChanged(self)
+        }
+    }
+    
+    var tipTax = false
+    var tipPercent: Decimal = 0.15
+    
+    func tipSubtotal() -> Decimal {
+        return subTotal * tipPercent
+    }
+    
+    func tipTotal() -> Decimal {
+        return checkTotal * tipPercent
+    }
+    
+    var tip: Decimal {
+        get {
+            if tipTax {
+                return tipTotal()
+            } else {
+                return tipSubtotal()
+            }
+        }
+        set(tip) {
+            log.info("tip \(tip)")
+            
+            modelChanged(self)
+            
+            if tipTax {
+                tipPercent = tip / checkTotal
+            } else {
+                tipPercent = tip / subTotal
+            }
+        }
+    }
+    
+    var totalWithTip: Decimal {
+        get {
+            return checkTotal + tip
+        }
+        set(new) {
+            log.info("\(new)")
+            tip = new - checkTotal
+        }
+    }
+    
+    var split = 2.0
+    var each: Decimal {
+        get {
+            return totalWithTip / Decimal(split)
+        }
+        set(new) {
+            log.info("\(new)")
+            totalWithTip = new * Decimal(split)
+        }
+    }
+    
+    var description: String {
+        get {
+            return "bill: \(checkTotal) tipPct:\(tipPercent) total:\(totalWithTip)"
+            //            return total * tipPct
+        }
+        
+    }
+}
