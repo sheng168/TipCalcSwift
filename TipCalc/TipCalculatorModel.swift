@@ -6,83 +6,137 @@
 //  Copyright © 2015 Sheng Yu. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class TipCalculatorModel: NSObject {
-//    func noop(sender sender: AnyObject) {
-//        
-//    }
+extension TipCalculatorModel {
+    var taxPctDecimal: Decimal? {
+        get {
+            return Decimal(taxPercent)
+        }
+        set(sub) {
+            if let sub = sub {
+                taxPercent = Double(truncating: sub as NSNumber)
+            } else {
+                log.info("err")
+                taxPercent = 0
+            }
+        }
+    }
 
-    var modelChanged: (_ sender: AnyObject) ->() = {(sender: AnyObject) in
+    var billDecimal: Decimal? {
+        get {
+            return Decimal(checkTotal)
+        }
+        set(sub) {
+            if let sub = sub {
+                checkTotal = Double(truncating: sub as NSNumber)
+            } else {
+                checkTotal = 0
+            }
+        }
+    }
+    
+    var percent: Int {
+        get {
+            Int(tipPercent * 100)
+        }
+        set(p) {
+            tipPercent = Double(p) / 100
+        }
+    }
+}
+
+struct TipCalculatorModel {
+
+    var modelChanged: (_ sender: TipCalculatorModel) ->() = {(sender: TipCalculatorModel) in
         // noop
     }
     
-    var bill: Double = 20 {
+    var subTotal: Double {
+        get {
+            return checkTotal / (1 + taxPercent)
+        }
+//        set(sub) {
+//            log.info("subTotal \(sub)")
+//
+//            modelChanged(self)
+//
+//            checkTotal = sub * (1 + taxPct)
+//        }
+    }
+
+    var tax: Double {
+        get {
+            subTotal * taxPercent
+        }
+    }
+    var taxPercent = 0.0875
+
+    
+    var checkTotal: Double = 20 {
         didSet {
-            print("set \(oldValue)")
+            log.info("bill set \(checkTotal)")
             
             modelChanged(self)
         }
     }
-    var tipPct: Double = 0.15
+    
+    var tipTax = false
+    var tipPercent: Double = 0.15
+    
+    func tipSubtotal() -> Double {
+        return subTotal * tipPercent
+    }
+    
+    func tipTotal() -> Double {
+        return checkTotal * tipPercent
+    }
     
     var tip: Double {
         get {
-            return bill * tipPct
+            if tipTax {
+                return tipTotal()
+            } else {
+                return tipSubtotal()
+            }
         }
         set(tip) {
-            print("tip \(tip)")
+            log.info("tip \(tip)")
             
             modelChanged(self)
             
-            tipPct = tip / bill
+            if tipTax {
+                tipPercent = tip / checkTotal
+            } else {
+                tipPercent = tip / subTotal
+            }
         }
     }
-    var total: Double {
+    
+    var totalWithTip: Double {
         get {
-            return bill + tip
+            return checkTotal + tip
         }
         set(new) {
-            print(new)
-            tip = new - bill
+            log.info("\(new)")
+            tip = new - checkTotal
         }
     }
-    var split = 2.0
     
+    var split = 2.0
     var each: Double {
         get {
-            return total / Double(split)
+            return totalWithTip / Double(split)
         }
         set(new) {
-            print(new)
-            total = new * split
+            log.info("\(new)")
+            totalWithTip = new * Double(split)
         }
     }
     
-    init(bill: Double, tipPct: Double) {
-//        super.init()
-//        self.bill = bill
-//        self.tipPct = tipPct
-        
-        //        super.description
-    }
-    
-    //    func returnPossibleTips() -> [Int: Double] {
-    //
-    //        let possibleTipsInferred = [0.15, 0.18, 0.20]
-    //
-    //        var retval = [Int: Double]()
-    //        for possibleTip in possibleTipsInferred {
-    //            let intPct = Int(possibleTip*100)
-    //            retval[intPct] = calcTipWithTipPct(possibleTip)
-    //        }
-    //        return retval
-    //
-    //    }
-    
-    override var description: String {
+    var description: String {
         get {
-            return "bill: \(bill) tipPct:\(tipPct) total:\(total)"
+            return "bill: \(checkTotal) tipPct:\(tipPercent) total:\(totalWithTip)"
             //            return total * tipPct
         }
         

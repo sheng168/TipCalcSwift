@@ -8,13 +8,19 @@
 
 import UIKit
 import CoreData
+// 1) let's import the logging API package
+import Logging
+
+// 2) we need to create a logger, the label works similarly to a DispatchQueue label
+let log = Logger(label: "us.jsy.TipCalc")
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // 3) we're now ready to use it
+        log.info("\(launchOptions ?? [:])")
+        
         // Override point for customization after application launch.
         return true
     }
