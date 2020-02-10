@@ -45,7 +45,7 @@
 		1A0F71E223DDCD1F00B0726D /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		1A0F71E423DDE8A800B0726D /* TipCalculatorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipCalculatorModel.swift; sourceTree = "<group>"; };
 		1A783AAB23E3219200D8D786 /* DecimalField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalField.swift; sourceTree = "<group>"; };
-		1AA3D35523DDC20300F07452 /* TipCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AA3D35523DDC20300F07452 /* Tip Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tip Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AA3D35823DDC20300F07452 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1AA3D35A23DDC20300F07452 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1AA3D35D23DDC20400F07452 /* TipCalc.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TipCalc.xcdatamodel; sourceTree = "<group>"; };
@@ -114,7 +114,7 @@
 		1AA3D35623DDC20300F07452 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1AA3D35523DDC20300F07452 /* TipCalc.app */,
+				1AA3D35523DDC20300F07452 /* Tip Calculator.app */,
 				1AA3D36E23DDC20800F07452 /* TipCalcTests.xctest */,
 				1AA3D37923DDC20800F07452 /* TipCalcUITests.xctest */,
 			);
@@ -187,7 +187,7 @@
 				1A783AAE23E4DA3B00D8D786 /* Logging */,
 			);
 			productName = TipCalc;
-			productReference = 1AA3D35523DDC20300F07452 /* TipCalc.app */;
+			productReference = 1AA3D35523DDC20300F07452 /* Tip Calculator.app */;
 			productType = "com.apple.product-type.application";
 		};
 		1AA3D36D23DDC20800F07452 /* TipCalcTests */ = {
@@ -478,7 +478,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = TipCalc/TipCalc.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"TipCalc/Preview Content\"";
 				DEVELOPMENT_TEAM = 6GW2SW5L9X;
 				ENABLE_PREVIEWS = YES;
@@ -487,9 +487,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = us.jsy.TipCalc;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Tip Calculator";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -501,7 +501,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = TipCalc/TipCalc.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"TipCalc/Preview Content\"";
 				DEVELOPMENT_TEAM = 6GW2SW5L9X;
 				ENABLE_PREVIEWS = YES;
@@ -510,9 +510,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = us.jsy.TipCalc;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Tip Calculator";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
