@@ -15,3 +15,7 @@ What our users are saying...
 "Simple & effective"
 
 "Very nice watch interface!"
+
+## Todo
+- location 
+- sharing calculations is also marketing feature 
