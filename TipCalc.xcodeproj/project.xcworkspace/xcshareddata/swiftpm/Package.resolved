@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "Communicado",
+        "repositoryURL": "https://github.com/mergesort/Communicado.git",
+        "state": {
+          "branch": null,
+          "revision": "dc10510f2005bd8e4f1107813046a57060f326a5",
+          "version": "3.2.0"
+        }
+      },
+      {
         "package": "KeyboardObserving",
         "repositoryURL": "https://github.com/nickffox/KeyboardObserving",
         "state": {

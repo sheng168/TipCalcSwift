@@ -24,8 +24,25 @@ extension TipCalculatorModel {
     }
 }
 
+struct ActivityView: UIViewControllerRepresentable {
+
+    let activityItems: [Any]
+    let applicationActivities: [UIActivity]?
+
+    func makeUIViewController(context: UIViewControllerRepresentableContext<ActivityView>) -> UIActivityViewController {
+        return UIActivityViewController(activityItems: activityItems,
+                                        applicationActivities: applicationActivities)
+    }
+
+    func updateUIViewController(_ uiViewController: UIActivityViewController,
+                                context: UIViewControllerRepresentableContext<ActivityView>) {
+
+    }
+}
+
 struct ContentView: View {
     @State var model = TipCalculatorModel()
+    @State private var showingSheet = false
 
 //    @State private var totalInput: Double? = 18.94
 
@@ -59,6 +76,8 @@ struct ContentView: View {
         meal.split = Int16(model.split)
 
         try? self.managedObjectContext.save()
+        
+        self.showingSheet = true
     }
     
     static var currencyFormatter: NumberFormatter {
@@ -199,6 +218,9 @@ struct ContentView: View {
                     }.onDisappear {
                         log.info("ContentView disappeared!")
                     }
+            }
+            .sheet(isPresented: $showingSheet) {
+                ActivityView(activityItems: ["Tip Calc", NSURL(string: "https://github.com/sheng168/TipCalcSwift?bill=25")!] as [Any], applicationActivities: nil)
             }
 //                .modifier(DismissingKeyboard()) // steals taps
                 .tabItem {
