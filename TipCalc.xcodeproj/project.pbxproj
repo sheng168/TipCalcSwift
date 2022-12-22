@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A046E852594BFFC006D595E /* Valet in Frameworks */ = {isa = PBXBuildFile; productRef = 1A046E842594BFFC006D595E /* Valet */; };
 		1A09E7DE23E056D000CE57E0 /* KeyboardObserving in Frameworks */ = {isa = PBXBuildFile; productRef = 1A09E7DD23E056D000CE57E0 /* KeyboardObserving */; };
+		1A0A0AB9241EE4EF0061F653 /* Purchases in Frameworks */ = {isa = PBXBuildFile; productRef = 1A0A0AB8241EE4EF0061F653 /* Purchases */; };
+		1A0A0ABB241EE55E0061F653 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0A0ABA241EE55E0061F653 /* StoreKit.framework */; };
 		1A0F71E323DDCD1F00B0726D /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0F71E223DDCD1F00B0726D /* CloudKit.framework */; };
 		1A0F71E523DDE8A800B0726D /* TipCalculatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0F71E423DDE8A800B0726D /* TipCalculatorModel.swift */; };
 		1A783AAC23E3219200D8D786 /* DecimalField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A783AAB23E3219200D8D786 /* DecimalField.swift */; };
@@ -24,6 +27,7 @@
 		1AE0D7FC23EE24B900C0E200 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE0D7FB23EE24B800C0E200 /* LocationView.swift */; };
 		1AF2AE2C23F759050016869E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1AF2AE2B23F759040016869E /* README.md */; };
 		1AF2AE2F23F862530016869E /* Communicado in Frameworks */ = {isa = PBXBuildFile; productRef = 1AF2AE2E23F862530016869E /* Communicado */; };
+		1AF2AE3123F9B2170016869E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF2AE3023F9B2170016869E /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A0A0ABA241EE55E0061F653 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		1A0F71E223DDCD1F00B0726D /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		1A0F71E423DDE8A800B0726D /* TipCalculatorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipCalculatorModel.swift; sourceTree = "<group>"; };
 		1A783AAB23E3219200D8D786 /* DecimalField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalField.swift; sourceTree = "<group>"; };
@@ -65,6 +70,7 @@
 		1AA3D38B23DDCC5100F07452 /* TipCalc.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TipCalc.entitlements; sourceTree = "<group>"; };
 		1AE0D7FB23EE24B800C0E200 /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		1AF2AE2B23F759040016869E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		1AF2AE3023F9B2170016869E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,10 +78,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A046E852594BFFC006D595E /* Valet in Frameworks */,
 				1A783AAF23E4DA3B00D8D786 /* Logging in Frameworks */,
 				1A0F71E323DDCD1F00B0726D /* CloudKit.framework in Frameworks */,
 				1AF2AE2F23F862530016869E /* Communicado in Frameworks */,
+				1A0A0ABB241EE55E0061F653 /* StoreKit.framework in Frameworks */,
 				1A09E7DE23E056D000CE57E0 /* KeyboardObserving in Frameworks */,
+				1A0A0AB9241EE4EF0061F653 /* Purchases in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +108,7 @@
 		1A0F71E123DDCD1F00B0726D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1A0A0ABA241EE55E0061F653 /* StoreKit.framework */,
 				1A0F71E223DDCD1F00B0726D /* CloudKit.framework */,
 			);
 			name = Frameworks;
@@ -141,6 +151,7 @@
 				1AA3D36923DDC20800F07452 /* Info.plist */,
 				1AA3D35C23DDC20400F07452 /* TipCalc.xcdatamodeld */,
 				1AA3D36323DDC20800F07452 /* Preview Content */,
+				1AF2AE3023F9B2170016869E /* SettingsView.swift */,
 			);
 			path = TipCalc;
 			sourceTree = "<group>";
@@ -191,6 +202,8 @@
 				1A09E7DD23E056D000CE57E0 /* KeyboardObserving */,
 				1A783AAE23E4DA3B00D8D786 /* Logging */,
 				1AF2AE2E23F862530016869E /* Communicado */,
+				1A0A0AB8241EE4EF0061F653 /* Purchases */,
+				1A046E842594BFFC006D595E /* Valet */,
 			);
 			productName = TipCalc;
 			productReference = 1AA3D35523DDC20300F07452 /* Tip Calculator.app */;
@@ -239,7 +252,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = Jin.Yu;
 				TargetAttributes = {
 					1AA3D35423DDC20300F07452 = {
@@ -268,6 +281,8 @@
 				1A09E7DC23E056D000CE57E0 /* XCRemoteSwiftPackageReference "KeyboardObserving" */,
 				1A783AAD23E4DA3B00D8D786 /* XCRemoteSwiftPackageReference "swift-log" */,
 				1AF2AE2D23F862530016869E /* XCRemoteSwiftPackageReference "Communicado" */,
+				1A0A0AB7241EE4EF0061F653 /* XCRemoteSwiftPackageReference "purchases-ios" */,
+				1A046E832594BFFC006D595E /* XCRemoteSwiftPackageReference "Valet" */,
 			);
 			productRefGroup = 1AA3D35623DDC20300F07452 /* Products */;
 			projectDirPath = "";
@@ -314,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AA3D35E23DDC20400F07452 /* TipCalc.xcdatamodeld in Sources */,
+				1AF2AE3123F9B2170016869E /* SettingsView.swift in Sources */,
 				1AA3D35923DDC20300F07452 /* AppDelegate.swift in Sources */,
 				1A783AAC23E3219200D8D786 /* DecimalField.swift in Sources */,
 				1AA3D36023DDC20400F07452 /* ContentView.swift in Sources */,
@@ -392,6 +408,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -452,6 +469,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -495,7 +513,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.7;
 				PRODUCT_BUNDLE_IDENTIFIER = us.jsy.TipCalc;
 				PRODUCT_NAME = "Tip Calculator";
 				SWIFT_VERSION = 5.0;
@@ -518,7 +536,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.7;
 				PRODUCT_BUNDLE_IDENTIFIER = us.jsy.TipCalc;
 				PRODUCT_NAME = "Tip Calculator";
 				SWIFT_VERSION = 5.0;
@@ -652,12 +670,28 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		1A046E832594BFFC006D595E /* XCRemoteSwiftPackageReference "Valet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Square/Valet";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.1;
+			};
+		};
 		1A09E7DC23E056D000CE57E0 /* XCRemoteSwiftPackageReference "KeyboardObserving" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/nickffox/KeyboardObserving";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 0.2.1;
+			};
+		};
+		1A0A0AB7241EE4EF0061F653 /* XCRemoteSwiftPackageReference "purchases-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RevenueCat/purchases-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.4;
 			};
 		};
 		1A783AAD23E4DA3B00D8D786 /* XCRemoteSwiftPackageReference "swift-log" */ = {
@@ -679,10 +713,20 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1A046E842594BFFC006D595E /* Valet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1A046E832594BFFC006D595E /* XCRemoteSwiftPackageReference "Valet" */;
+			productName = Valet;
+		};
 		1A09E7DD23E056D000CE57E0 /* KeyboardObserving */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1A09E7DC23E056D000CE57E0 /* XCRemoteSwiftPackageReference "KeyboardObserving" */;
 			productName = KeyboardObserving;
+		};
+		1A0A0AB8241EE4EF0061F653 /* Purchases */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1A0A0AB7241EE4EF0061F653 /* XCRemoteSwiftPackageReference "purchases-ios" */;
+			productName = Purchases;
 		};
 		1A783AAE23E4DA3B00D8D786 /* Logging */ = {
 			isa = XCSwiftPackageProductDependency;

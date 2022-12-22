@@ -234,7 +234,7 @@ struct ContentView: View {
                     Text("Log")
                 }.tag(1)
 
-            Text("Settings")
+            SettingsView()
                 .tabItem {
                     Image(systemName: "3.circle")
                     Text("Settings")
