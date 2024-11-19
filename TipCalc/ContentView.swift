@@ -77,7 +77,7 @@ struct ContentView: View {
 
         try? self.managedObjectContext.save()
         
-        self.showingSheet = true
+//        self.showingSheet = true
     }
     
     static var currencyFormatter: NumberFormatter {
@@ -228,23 +228,25 @@ struct ContentView: View {
                     Text("Calculator")
                 }.tag(0)
             
-            Text("Link to Tipping Article")
-                .tabItem {
-                    Image(systemName: "2.circle")
-                    Text("Log")
-                }.tag(1)
-
-            SettingsView()
-                .tabItem {
-                    Image(systemName: "3.circle")
-                    Text("Settings")
-                }.tag(2)
-
-            LocationView()
-                .tabItem {
-                    Image(systemName: "4.circle")
-                    Text("Debug")
-                }.tag(3)
+            if false {
+                Text("Link to Tipping Article")
+                    .tabItem {
+                        Image(systemName: "2.circle")
+                        Text("Log")
+                    }.tag(1)
+                
+                SettingsView()
+                    .tabItem {
+                        Image(systemName: "3.circle")
+                        Text("Settings")
+                    }.tag(2)
+                
+                LocationView()
+                    .tabItem {
+                        Image(systemName: "4.circle")
+                        Text("Debug")
+                    }.tag(3)
+            }
         }
             .keyboardObserving()
 
