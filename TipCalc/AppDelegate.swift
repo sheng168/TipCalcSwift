@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if (offerings != nil) {
                 let count = offerings?.all.count
                 
-                log.info("\(count ?? 0) offerings \(offerings!.current?.annual)")
+//                log.info("\(count ?? 0) offerings \(offerings!.current?.annual)")
             }
         }
         
