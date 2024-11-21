@@ -17,7 +17,7 @@ extension TipCalculatorModel {
             if let sub = sub {
                 taxPercent = Double(truncating: sub as NSNumber)
             } else {
-                log.info("err")
+//                log.info("err")
                 taxPercent = 0
             }
         }
@@ -75,7 +75,7 @@ struct TipCalculatorModel {
     
     var checkTotal: Double = 20 {
         didSet {
-            log.info("bill set \(checkTotal)")
+//            log.info("bill set \(checkTotal)")
             
             modelChanged(self)
         }
@@ -101,7 +101,7 @@ struct TipCalculatorModel {
             }
         }
         set(tip) {
-            log.info("tip \(tip)")
+//            log.info("tip \(tip)")
             
             modelChanged(self)
             
@@ -118,7 +118,7 @@ struct TipCalculatorModel {
             return checkTotal + tip
         }
         set(new) {
-            log.info("\(new)")
+//            log.info("\(new)")
             tip = new - checkTotal
         }
     }
@@ -129,7 +129,7 @@ struct TipCalculatorModel {
             return totalWithTip / Double(split)
         }
         set(new) {
-            log.info("\(new)")
+//            log.info("\(new)")
             totalWithTip = new * Double(split)
         }
     }
@@ -172,7 +172,7 @@ struct TipCalculatorModelDecimal {
     
     var checkTotal: Decimal = 20 {
         didSet {
-            log.info("bill set \(checkTotal)")
+//            log.info("bill set \(checkTotal)")
             
             modelChanged(self)
         }
@@ -198,7 +198,7 @@ struct TipCalculatorModelDecimal {
             }
         }
         set(tip) {
-            log.info("tip \(tip)")
+//            log.info("tip \(tip)")
             
             modelChanged(self)
             
@@ -215,7 +215,7 @@ struct TipCalculatorModelDecimal {
             return checkTotal + tip
         }
         set(new) {
-            log.info("\(new)")
+//            log.info("\(new)")
             tip = new - checkTotal
         }
     }
@@ -226,7 +226,7 @@ struct TipCalculatorModelDecimal {
             return totalWithTip / Decimal(split)
         }
         set(new) {
-            log.info("\(new)")
+//            log.info("\(new)")
             totalWithTip = new * Decimal(split)
         }
     }
