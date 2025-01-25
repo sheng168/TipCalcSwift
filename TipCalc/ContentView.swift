@@ -241,11 +241,11 @@ struct ContentView: View {
                         Text("Settings")
                     }.tag(2)
                 
-                LocationView()
-                    .tabItem {
-                        Image(systemName: "4.circle")
-                        Text("Debug")
-                    }.tag(3)
+//                LocationView()
+//                    .tabItem {
+//                        Image(systemName: "4.circle")
+//                        Text("Debug")
+//                    }.tag(3)
             }
         }
             .keyboardObserving()
