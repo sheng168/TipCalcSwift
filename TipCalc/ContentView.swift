@@ -97,7 +97,7 @@ struct ContentView: View {
     
     @State var dollarValue: Decimal?
     @State var percentValue: Decimal?
-    @State var selectedView = 0
+    @AppStorage("SelectedTabIndex") var selectedView: Int = 0
 
     var body: some View {
         TabView(selection: $selectedView) {
@@ -283,3 +283,4 @@ struct ContentView_Previews: PreviewProvider {
             .environment(\.managedObjectContext, context)
     }
 }
+

@@ -5,6 +5,8 @@ struct MortgageCalculatorView: View {
     @AppStorage("Mortgage_AnnualRateString") private var annualRateString: String = "6.5" // percent
     @AppStorage("Mortgage_Years") private var years: Int = 30
 
+    @FocusState private var principalFieldFocused: Bool
+
     private var principal: Double { Double(principalString) ?? 0 }
     private var annualRatePercent: Double { Double(annualRateString) ?? 0 }
 
@@ -39,6 +41,14 @@ struct MortgageCalculatorView: View {
         return nf
     }()
 
+    private static let groupingFormatter: NumberFormatter = {
+        let nf = NumberFormatter()
+        nf.numberStyle = .decimal
+        nf.usesGroupingSeparator = true
+        nf.maximumFractionDigits = 2
+        return nf
+    }()
+
     var body: some View {
         NavigationView {
             Form {
@@ -49,6 +59,20 @@ struct MortgageCalculatorView: View {
                         TextField("Amount", text: $principalString)
                             .keyboardType(.decimalPad)
                             .multilineTextAlignment(.trailing)
+                            .focused($principalFieldFocused)
+                            .onChange(of: principalFieldFocused) { wasFocused in
+                                if wasFocused == false { // editing ended
+                                    // Strip non-numeric except dot
+                                    let cleaned = principalString.filter { ("0"..."9").contains($0) || $0 == "." }
+                                    if let value = Double(cleaned) {
+                                        principalString = Self.groupingFormatter.string(from: NSNumber(value: value)) ?? cleaned
+                                    } else if cleaned.isEmpty {
+                                        principalString = ""
+                                    } else {
+                                        principalString = cleaned
+                                    }
+                                }
+                            }
                     }
                     HStack {
                         Text("Annual Interest Rate")
