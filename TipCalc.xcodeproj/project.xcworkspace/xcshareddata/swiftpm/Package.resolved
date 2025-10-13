@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/nickffox/KeyboardObserving",
       "state" : {
-        "revision" : "26c0c913c11f0ee77006740ca1d8b478d222184f",
-        "version" : "0.3.0"
+        "revision" : "6d043ee2402ea4b827601f9b8edcc52a88aabff2",
+        "version" : "0.2.1"
       }
     },
     {
