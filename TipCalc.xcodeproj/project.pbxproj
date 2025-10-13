@@ -26,11 +26,11 @@
 		1AA3D37E23DDC20800F07452 /* TipCalcUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA3D37D23DDC20800F07452 /* TipCalcUITests.swift */; };
 		1AE0D7FC23EE24B900C0E200 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE0D7FB23EE24B800C0E200 /* LocationView.swift */; };
 		1AF2AE2C23F759050016869E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1AF2AE2B23F759040016869E /* README.md */; };
-		1AF2AE2F23F862530016869E /* Communicado in Frameworks */ = {isa = PBXBuildFile; productRef = 1AF2AE2E23F862530016869E /* Communicado */; };
 		1AF2AE3123F9B2170016869E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF2AE3023F9B2170016869E /* SettingsView.swift */; };
 		3C3EC3012CED4D4C00D0CF3F /* TipCalcWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 3C3EC2DE2CED4D4B00D0CF3F /* TipCalcWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3C3EC30C2CED82DF00D0CF3F /* TipCalculatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0F71E423DDE8A800B0726D /* TipCalculatorModel.swift */; };
 		3C3EC30D2CED830E00D0CF3F /* DecimalField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A783AAB23E3219200D8D786 /* DecimalField.swift */; };
+		3C7BDD122E9D51A3004BC899 /* MortgageCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7BDD112E9D51A3004BC899 /* MortgageCalculatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +112,7 @@
 		3C3EC2DE2CED4D4B00D0CF3F /* TipCalcWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TipCalcWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C3EC2ED2CED4D4C00D0CF3F /* TipCalcWatch Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TipCalcWatch Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C3EC2F72CED4D4C00D0CF3F /* TipCalcWatch Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TipCalcWatch Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C7BDD112E9D51A3004BC899 /* MortgageCalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MortgageCalculatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -128,7 +129,6 @@
 				1A046E852594BFFC006D595E /* Valet in Frameworks */,
 				1A783AAF23E4DA3B00D8D786 /* Logging in Frameworks */,
 				1A0F71E323DDCD1F00B0726D /* CloudKit.framework in Frameworks */,
-				1AF2AE2F23F862530016869E /* Communicado in Frameworks */,
 				1A0A0ABB241EE55E0061F653 /* StoreKit.framework in Frameworks */,
 				1A09E7DE23E056D000CE57E0 /* KeyboardObserving in Frameworks */,
 				1A0A0AB9241EE4EF0061F653 /* Purchases in Frameworks */,
@@ -226,6 +226,7 @@
 				1AA3D35C23DDC20400F07452 /* TipCalc.xcdatamodeld */,
 				1AA3D36323DDC20800F07452 /* Preview Content */,
 				1AF2AE3023F9B2170016869E /* SettingsView.swift */,
+				3C7BDD112E9D51A3004BC899 /* MortgageCalculatorView.swift */,
 			);
 			path = TipCalc;
 			sourceTree = "<group>";
@@ -277,7 +278,6 @@
 			packageProductDependencies = (
 				1A09E7DD23E056D000CE57E0 /* KeyboardObserving */,
 				1A783AAE23E4DA3B00D8D786 /* Logging */,
-				1AF2AE2E23F862530016869E /* Communicado */,
 				1A0A0AB8241EE4EF0061F653 /* Purchases */,
 				1A046E842594BFFC006D595E /* Valet */,
 			);
@@ -435,7 +435,6 @@
 			packageReferences = (
 				1A09E7DC23E056D000CE57E0 /* XCRemoteSwiftPackageReference "KeyboardObserving" */,
 				1A783AAD23E4DA3B00D8D786 /* XCRemoteSwiftPackageReference "swift-log" */,
-				1AF2AE2D23F862530016869E /* XCRemoteSwiftPackageReference "Communicado" */,
 				1A0A0AB7241EE4EF0061F653 /* XCRemoteSwiftPackageReference "purchases-ios" */,
 				1A046E832594BFFC006D595E /* XCRemoteSwiftPackageReference "Valet" */,
 			);
@@ -514,6 +513,7 @@
 				1AA3D36023DDC20400F07452 /* ContentView.swift in Sources */,
 				1AE0D7FC23EE24B900C0E200 /* LocationView.swift in Sources */,
 				1A0F71E523DDE8A800B0726D /* TipCalculatorModel.swift in Sources */,
+				3C7BDD122E9D51A3004BC899 /* MortgageCalculatorView.swift in Sources */,
 				1AA3D35B23DDC20300F07452 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -726,6 +726,7 @@
 				DEVELOPMENT_TEAM = 6GW2SW5L9X;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = TipCalc/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -749,6 +750,7 @@
 				DEVELOPMENT_TEAM = 6GW2SW5L9X;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = TipCalc/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1117,14 +1119,6 @@
 				minimumVersion = 1.2.0;
 			};
 		};
-		1AF2AE2D23F862530016869E /* XCRemoteSwiftPackageReference "Communicado" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/mergesort/Communicado.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.2.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1147,11 +1141,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1A783AAD23E4DA3B00D8D786 /* XCRemoteSwiftPackageReference "swift-log" */;
 			productName = Logging;
-		};
-		1AF2AE2E23F862530016869E /* Communicado */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1AF2AE2D23F862530016869E /* XCRemoteSwiftPackageReference "Communicado" */;
-			productName = Communicado;
 		};
 /* End XCSwiftPackageProductDependency section */
 

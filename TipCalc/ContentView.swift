@@ -228,6 +228,13 @@ struct ContentView: View {
                     Text("Calculator")
                 }.tag(0)
             
+            MortgageCalculatorView()
+                .tabItem {
+                    Image(systemName: "house")
+                    Text("Mortgage")
+                }
+                .tag(1)
+            
             if false {
                 Text("Link to Tipping Article")
                     .tabItem {
